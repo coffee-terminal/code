@@ -2,7 +2,6 @@ body {
   background-color: #777c6d;
 
 }
-
 div.zoom img {
   width: 288px;
   opacity: .2;
@@ -72,7 +71,3 @@ footer p {
   color: black;
 }
 
-div p {
-  column-rule: red;
-  background-image: url("https://images.sonurai.com/HCABooks.jpg");
-}

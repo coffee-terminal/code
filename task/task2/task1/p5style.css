@@ -1,25 +1,28 @@
-div.fadevideo{
-    animation: fadeIn 5s;
-}
 #myVideo {
-  position:fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%; 
-  min-height: 100%;
-  z-index: -1;
-  opacity: 0.30;
+    position: fixed;
+    width: 100%;
+    min-width: none;
+    z-index: -1;
+    opacity: 0.35;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-
 body {
     background-color: black;
-    padding: 10%;
+    padding: 5%;
+    /* padding-top: 1%;
+    padding-right: 5%;
+    padding-left: 5%; */
+
 }
+
 
 
 
 main {
-    background-color: rgba(0, 0, 0, 0.60);
+    background-color: rgba(0, 0, 0, 0.40);
+
 }
 
 table {
@@ -71,10 +74,5 @@ a:hover {
 }
 
 footer p {
-    color: black;
-}
-
-div p {
-    column-rule: red;
-    background-image: url("https://images.sonurai.com/HCABooks.jpg");
+    color: white;
 }
