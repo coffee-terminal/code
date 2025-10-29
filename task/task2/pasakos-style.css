@@ -1,0 +1,73 @@
+body {
+  background-color: #777c6d;
+
+}
+div.zoom img {
+  width: 288px;
+  opacity: .2;
+}
+
+div.zoom img:hover {
+  opacity: 1;
+  transition: transform .2s;
+  transform: scale(2);
+
+}
+
+
+main {
+  background-color: #777c6d;
+}
+
+table {
+  color: #b7b89f;
+
+}
+
+h1 {
+  font-size: xx-large;
+  font-weight: 500;
+  font-family: "Outfit", sans-serif;
+}
+
+h2 {
+  font-size: 24px;
+  color: #b7b89f;
+}
+
+p {
+  color: #cbcbcb;
+  font-weight: 100;
+  font-family: "Outfit", sans-serif;
+}
+
+p u {
+  color: #b7b89f;
+  font-weight: 300;
+
+}
+
+p b {
+  font-weight: 300;
+}
+
+a:link {
+  color: #B7B89F;
+}
+
+a:active {
+  color: white;
+}
+
+a:visited {
+  color: #9b9d8f;
+}
+
+a:hover {
+  color: white;
+}
+
+footer p {
+  color: black;
+}
+

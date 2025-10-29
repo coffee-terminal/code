@@ -1,0 +1,78 @@
+#myVideo {
+    position: fixed;
+    width: 100%;
+    min-width: none;
+    z-index: -1;
+    opacity: 0.35;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+body {
+    background-color: black;
+    padding: 5%;
+    /* padding-top: 1%;
+    padding-right: 5%;
+    padding-left: 5%; */
+
+}
+
+
+
+
+main {
+    background-color: rgba(0, 0, 0, 0.40);
+
+}
+
+table {
+    color: #b7b89f;
+
+}
+
+h1 {
+    font-size: xx-large;
+    font-weight: 500;
+    font-family: "Outfit", sans-serif;
+}
+
+h2 {
+    font-size: 24px;
+    color: #b7b89f;
+}
+
+p {
+    color: #cbcbcb;
+    font-weight: 100;
+    font-family: "Outfit", sans-serif;
+}
+
+p u {
+    color: #b7b89f;
+    font-weight: 300;
+
+}
+
+p b {
+    font-weight: 300;
+}
+
+a:link {
+    color: #B7B89F;
+}
+
+a:active {
+    color: white;
+}
+
+a:visited {
+    color: #9b9d8f;
+}
+
+a:hover {
+    color: white;
+}
+
+footer p {
+    color: white;
+}
