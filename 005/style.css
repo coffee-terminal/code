@@ -32,12 +32,11 @@ section {
     border: 2px solid rgb(144, 40, 140);
     width: calc(33.3333% - 30px);
     height: 160px;
-
     font-size: 18px;
     display: inline-block;
     min-width: 200px;
     vertical-align: top;
-    margin: 10px 15px;
+    /* margin: 10px 15px; */
 }
 
 
