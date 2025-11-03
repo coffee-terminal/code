@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Outfit", sans-serif;
+    background-color: black;
+    font-size: 22px;
+    color: white;
+
+}
+
+.nuotrauka {
+    position: fixed;
+    background-image: url(../000/bg.JPG);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    opacity: 0.1;
+}
+
+.fixed-section {
+    z-index: 1;
+    font-size: 0;
+    /* display: inline-block; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    text-align: center;
+}
+
+.meniu1 {
+    background-color: darkgray;
+}
+
+.tekstas {
+    background-color: grey;
+    display: inline-block;
+    position: relative;
+    min-width: 267.2px;
+    border: 3px solid white;
+    text-align: center;
+
+}
+
+.meniu1>div {
+    color: crimson;
+    font-weight: 500;
+    font-size: 50px;
+
+}
+
+.stalas {
+    border: 3px solid brown;
+    position: relative;
+    max-width: 1336px;
+    margin: auto;
+    margin-top: 80px;
+}
+
+.main-text {
+    border: 3px solid lightgray;
+    padding: 10px;
+    margin: 50px;
+    font-weight: 300;
+    font-size: 30px;
+    background-color: #8080803d;
+}
+
+.main-text p {
+    margin: 20px 20px;
+    color: darkgrey;
+}
+
+.main-text p:nth-child(2) {
+    font-weight: 500;
+}
+
+.main-text p:last-child {
+    font-style: italic;
+}
+
+.langelis1 {
+
+    /* margin: 10px 10px; */
+    padding: 30px 30px;
+    /* background-image: url(../000/pic.jpeg); */
+    opacity: 0.2;
+}
