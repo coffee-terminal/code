@@ -1,4 +1,4 @@
-body {
+/* body {
     background-image:url('http://127.0.0.1:5500/002/pic.jpeg');
     background-image: -o-repeating-linear-gradient(0.5);    
     background-repeat: no-repeat;
@@ -6,8 +6,8 @@ body {
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
-}
-.linkas{
+} */
+.linkas {
     text-decoration: none;
     color: darkorange;
     font-size: 30px;
@@ -19,57 +19,72 @@ body {
     border: 3px solid black;
 }
 
-.box.red{
+.box.red {
     background-color: #dc143c70;
     border-color: crimson;
 }
-.box.blue{
+
+.box.blue {
     background-color: #6495ED70;
     border-color: cornflowerblue;
 }
 
-section{
+section {
     margin: 50px;
     border: 1px solid gray;
     min-height: 400px;
     position: relative;
 }
 
-.box1{
+.box1 {
     position: relative;
     top: 30px;
     left: 100px;
 }
 
-.box2{
+.box2 {
     position: absolute;
     top: 30px;
     left: 30px;
 }
-.box3{
+
+.box3 {
     position: fixed;
     top: 30px;
     left: 30px;
 }
-h1{
+
+.box4, .box5, .box6 {
+    display:inline-block;
+    position: fixed;
+    top: 70px;
+    left: 100px;
+    
+
+}
+
+h1 {
     font-size: 50px;
 }
-h1 span{
+
+h1 span {
     font-size: 18px;
     position: relative;
     bottom: 22px;
     right: 2px;
 }
 
-.big-box{
+.big-box {
     border: 3px solid darkorange;
     display: inline-block;
     position: relative;
 }
+
 .big-box img {
     width: 400px;
 }
-.big-box h2{
+
+.big-box h2 {
     position: absolute;
     bottom: 60px;
     left: 30px;
