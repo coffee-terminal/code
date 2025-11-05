@@ -86,3 +86,45 @@ section .block {
         font-size: 60px;
     }
 }
+
+div.icon svg {
+    width: 255px;
+}
+
+div.icon svg path:nth-child(10) {
+    fill: yellowgreen;
+}
+
+div.icon svg path:nth-child(11) {
+    fill: crimson;
+}
+
+div.icon svg path:nth-child(9):hover {
+    fill: green;
+}
+
+.find {
+    margin: 30px;
+    position: relative;
+    display: inline-block;
+}
+
+
+.find input {
+    outline: none;
+    font-size: 30px;
+    border: none;
+}
+
+.find svg {
+    position: absolute;
+    width: 30px;
+    top: 3px;
+    right: 3px;
+    fill: grey;
+}
+
+
+h1 {
+    color: skyblue;
+}
