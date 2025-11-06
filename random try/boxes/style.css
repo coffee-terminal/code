@@ -47,7 +47,7 @@
 .box4 {
     position: relative;
     margin: 0 auto;
-    top: 50px;
+    top: -1000px;
     width: 1000px;
     height: 800px;
     background-color: orange;
