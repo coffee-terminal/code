@@ -9,9 +9,9 @@ var pasisveikinimasSuBarsuku = "Labas rytas, ponas Barsukai!";
 console.log("pasisveikinimasSuBarsuku", pasisveikinimasSuBarsuku);
 x = 20;
 
-console.log(x, pasisveikinimasSuBarsuku);
+console.log(x, pasisveikinimasSuBarsuku); //Matavimas
 
-let L = 20;
+let L = 20; // deklaracija - Vardo ir reikšmės suteikimas
 const N = 20;
 
 // 1. Kintamojo vardas
@@ -23,3 +23,51 @@ let K2 = "Barsukas"; //tipas string symbol
 let K3 = "102"; //tipas string
 let K4 = 54.78; // tipas number
 let K8 = -78.0002; // tipas number
+
+let K20 = K1 + 30;
+
+console.log(K20);
+
+let K30 = 100 + 20 * 5;
+
+console.log(K30);
+
+let K40 = K1 + K3; // Sulipdymas
+console.log(K40, typeof K40); // tipo pasitikrinimas
+
+let K50 = K2 + " " + K2;
+console.log(K50);
+
+console.log(5 + 12 + 6 + "Labas" + 20);
+
+let bebrasVardas = "Jonas";
+let bebrasAmzius = 12;
+
+//objektas
+let bebras = {
+  vardas: "Jonas", // cia yra property
+  amzius: 12,
+};
+
+bebras.uodega = "Pusilgė";
+bebras.amzius = 14;
+
+console.log(bebras);
+
+console.log(bebras.amzius);
+
+let h1 = document.querySelector("h1");
+
+console.log(h1, typeof h1);
+
+let b = document.querySelector("body");
+
+console.log(b, typeof h1);
+
+let color = "blue";
+let like = "sky";
+let dark = "dark";
+
+let bodyColor = like + color;
+
+b.style.background = bodyColor;
