@@ -43,12 +43,11 @@ body {
     border-radius: 3px;
 }
 
-/////////////////////////////////////
 .header {
     background-color: #ffffff;
     color: #1f1534;
     width: 100%;
-    max-width: $xl;
+    max-width: 1220;
     /* height: auto; */
 }
 
@@ -94,15 +93,16 @@ body {
     align-items: center;
     row-gap: 20px;
     column-gap: 40px;
-    height: 23px;
-    font-size: 18px;
-    color: #1f1534;
-    font-weight: 500;
-    padding-top: 14px;
-    padding-right: 2px;
+    /* height: 23px; */
+    /* font-size: 18px; */
+    /* color: #1f1534; */
+    /* font-weight: 500; */
+    /* padding-top: 14px; */
+    /* padding-right: 2px; */
+
 }
 
-/////////////////////////////////////
+
 .sidebar {
     flex: 1;
     background: greenyellow;
