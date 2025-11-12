@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto';
+
+}
+
+:root {
+    --main-color-light: #9A54BC;
+    /* --main-color-light: blue; */
+
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.topPurple {
+    width: 100%;
+    height: 20px;
+    text-align: center;
+    background-color: #60267F;
+    color: white;
+    font-size: 10px;
+    align-items: center;
+    padding: 4.4px 0 0 0;
+}
+
+.topHeader {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 50px;
+    box-shadow: 1px 5px 5px -4px rgba(105, 105, 105, 0.3);
+    -webkit-box-shadow: 1px 5px 5px -4px rgba(105, 105, 105, 0.3);
+    -moz-box-shadow: 1px 5px 5px -4px rgba(105, 105, 105, 0.3);
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    width: 470px;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.linkContainer {
+    font-family: 'Roboto';
+    color: rgba(43, 2, 54, 1);
+    width: 300px;
+    font-weight: 600;
+    font-size: 15px;
+    flex-wrap: wrap;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* justify-content: center; */
+    row-gap: 30px;
+}
+
+.headerButton {
+    padding: 6px;
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    border: 2px solid var(--main-color-light);
+    color: var(--main-color-light);
+    cursor: pointer;
+}
+
+.headerButton:hover {
+    background-color: var(--main-color-light);
+    color: white;
+}
+
+.firstSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 100px;
+    /* height: 300px; */
+    /* background-color: orange; */
+    row-gap: 23px;
+}
+
+.firstSection h1 {
+    font-size: 56px;
+    font-weight: 500;
+    text-align: center;
+    color: #2B0236;
+    letter-spacing: 1.2px;
+}
+
+.firstSection button {
+    padding: 15px;
+    background-color: var(--main-color-light);
+    border: 1px solid var(--main-color-light);
+    font-weight: 700;
+    color: white;
+    border-radius: 3px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.firstSection button:hover {
+    background-color: transparent;
+    color: var(--main-color-light);
+}
+
+.sectionElipses {
+    background-color: lightgreen;
+    height: 500px;
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.EllipseSmall {
+    top: 75px
+}
+
+.phone {
+    max-width: 122px;
+    top: 85px;
+}
+
+.phoneLogo {
+    top: 195px;
+}
+
+.buttonSectionElipses {
+    top: 370PX;
+    padding: 5px 10px;
+    color: var(--main-color-light);
+    border: 2px solid var(--main-color-light);
+    background-color: white;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.buttonSectionElipses:hover {
+    background-color: var(--main-color-light);
+    color: white;
+}
+
+.sectionIcons {
+    flex-direction: column;
+    column-gap: 50px;
+}
+
+.containerIcons {
+    justify-content: space-evenly;
+    width: 70%;
+}
+
+.sectionCollabHelp {
+    margin-top: 50px;
+    flex-direction: column;
+
+}
+
+.collabHelpMainContainer {
+    align-items: flex-start;
+    height: 500px;
+    width: 100%;
+}
+
+.collabHelpLeftContainer {
+    background-color: lightblue;
+    height: 500px;
+    width: 500px;
+    margin: 16px 0 0 0;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+
+.collabHelpButtonContainer {
+    flex-direction: row;
+    width: 100%;
+    padding: 2px;
+}
+
+.collabHelpButtonContainer button {
+
+    width: 50%;
+    background-color: white;
+    border: 2px solid white;
+    padding-top: 3px;
+    padding-bottom: 3px;
+
+}
+
+.collabHelpButtonContainer button:hover {
+    background-color: #60267F;
+    color: white;
+    cursor: pointer;
+}
