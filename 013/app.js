@@ -136,15 +136,34 @@ if (5 > 10 && 10 > 3) {
   console.log("Ne");
 }
 
-//10 5 3
-if (10 > 5 || 10 > 3) {
-  if (5 > 3) {
-    console.log("5");
-  } else {
-    console.log("3");
-  }
-} else if (5 > 3) {
-  console.log("5");
-} else {
-  console.log("3");
+function rand(min, max) {
+  const minCeiled = Math.ceil(min);
+  const maxFloored = Math.floor(max);
+  return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
 }
+let A4 = rand(50, 200);
+let B4 = rand(50, 200);
+let C4 = rand(50, 200);
+
+console.log(A4, B4, C4);
+
+let didesnisSkaicius4 = Math.max(A4, B4, C4);
+let mazesnisSkaicius4 = Math.min(A4, B4, C4);
+
+let vidutinisSkaicius4 = 0;
+if (A4 > B4 || A4 > C4) {
+  if (A4 > B4 && A4 > C4) {
+    if (B4 > C4) {
+      vidutinisSkaicius4 = B4;
+    } else {
+      vidutinisSkaicius4 = C4;
+    }
+  } else {
+    vidutinisSkaicius4 = A4;
+  }
+} else if (B4 > C4) {
+  vidutinisSkaicius4 = C4;
+} else {
+  vidutinisSkaicius4 = B4;
+}
+console.log(vidutinisSkaicius4);

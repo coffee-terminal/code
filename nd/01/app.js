@@ -58,20 +58,6 @@ let span2 = (document.querySelector("#go3>span+span").innerText =
 let span3 = (document.querySelector("#go3>span + span + span").innerText =
   result2.toFixed(2));
 
-// let array = [A, B];
-// let didesneReiksme = 0;
-
-// for (let cikloNr = 0; cikloNr < array.length; cikloNr++) {
-//   //skaiciuoja iki max array esanciu inputu
-//   if (array[cikloNr] > didesneReiksme) {
-//     //ar ciklo reiksme didesne uz praeita
-//     didesneReiksme = array[cikloNr];
-//     //uzfiksuoja didesne reiksme
-//   }
-//   //atliekami visi like array indexai pakol
-// }
-// console.log(didesneReiksme);
-
 // Sukurkite tris kintamuosius ir naudodamiesi funkcija rand() jiems priskirkite atsitiktines reikšmes nuo 50 iki 200.
 // Iš section tage su id=go4 esančių div tagų padarykite atitinkamo dydžio (px) apskritimus.
 // Apskritimai turi būti išdėlioti eilute nuo mažiausio iki didžiausio.
@@ -84,62 +70,48 @@ console.log(A4, B4, C4);
 
 let didesnisSkaicius4 = Math.max(A4, B4, C4);
 let mazesnisSkaicius4 = Math.min(A4, B4, C4);
+let vidutinisSkaicius4 = 0;
 
-let arr = [A4, B4, C4, didesnisSkaicius4, mazesnisSkaicius4];
-
-// if (A4 > B4 && A4 > C4) {
-//   if (B4 > C4) {
-//     let vidutinisSkaicius4 = B4;
-//     console.log(vidutinisSkaicius4);
-//   } else {
-//     let vidutinisSkaicius4 = C4;
-//     console.log(vidutinisSkaicius4);
-//   }
-// } else {
-//   if (B4 > A4 && B4 > C4) {
-//     if (A4 > C4) {
-//       let vidutinisSkaicius4 = A4;
-//       console.log(vidutinisSkaicius4);
-//     } else {
-//       let vidutinisSkaicius4 = C4;
-//       console.log(vidutinisSkaicius4);
-//     }
-//   } else {
-//     if (A4 > C4) {
-//       let vidutinisSkaicius4 = A4;
-//       console.log(vidutinisSkaicius4);
-//     } else {
-//       let vidutinisSkaicius4 = C4;
-//       console.log(vidutinisSkaicius4);
-//     }
-//   }
-// }
-// console.log(didesnisSkaicius4);
-// console.log(mazesnisSkaicius4);
+if (A4 > B4 || A4 > C4) {
+  if (A4 > B4 && A4 > C4) {
+    if (B4 > C4) {
+      vidutinisSkaicius4 = B4;
+    } else {
+      vidutinisSkaicius4 = C4;
+    }
+  } else {
+    vidutinisSkaicius4 = A4;
+  }
+} else if (B4 > C4) {
+  vidutinisSkaicius4 = C4;
+} else {
+  vidutinisSkaicius4 = B4;
+}
+console.log(vidutinisSkaicius4);
 
 let go4div1 = document.querySelector("#go4>div");
 
+go4div1.style.display = "inline-block";
 go4div1.style.width = mazesnisSkaicius4 + "px";
 go4div1.style.height = mazesnisSkaicius4 + "px";
 go4div1.style.backgroundColor = "orange";
 go4div1.style.borderRadius = "50%";
-myResultDiv2.style.display = "inline-block";
 
 let go4div2 = document.querySelector("#go4>div + div");
 
-go4div2.style.width = B4 + "px";
-go4div2.style.height = B4 + "px";
+go4div2.style.display = "inline-block";
+go4div2.style.width = vidutinisSkaicius4 + "px";
+go4div2.style.height = vidutinisSkaicius4 + "px";
 go4div2.style.backgroundColor = "orange";
 go4div2.style.borderRadius = "50%";
-myResultDiv2.style.display = "inline-block";
 
 let go4div3 = document.querySelector("#go4>div + div + div");
 
+go4div3.style.display = "inline-block";
 go4div3.style.width = didesnisSkaicius4 + "px";
 go4div3.style.height = didesnisSkaicius4 + "px";
 go4div3.style.backgroundColor = "pink";
 go4div3.style.borderRadius = "50%";
-myResultDiv2.style.display = "inline-block";
 
 // Naudokite funkcija rand(). Į section tage su id=go5 esančius span įrašykite 3 skaičius nuo -10 iki 10. Skaičius mažesnių už 0 spausdinkite raudonai,  didesnius už 0 mėlynai, o 0 žaliai.
 
