@@ -1,4 +1,4 @@
-console.log("Labas, Ifai");
+console.log('Labas, Ifai');
 
 //Loginis Boolean
 
@@ -8,8 +8,8 @@ const ne = false;
 console.log(taip, typeof taip);
 console.log(ne, typeof ne);
 
-let bebras = "Bebras"; // true
-const nieko = ""; // false
+let bebras = 'Bebras'; // true
+const nieko = ''; // false
 
 /*
 
@@ -20,33 +20,33 @@ Ir &&
 
 */
 
-console.log("!taip", !taip);
-console.log("!ne", !ne);
+console.log('!taip', !taip);
+console.log('!ne', !ne);
 
-console.log("!!taip", !!taip);
-console.log("!!ne", !!ne);
+console.log('!!taip', !!taip);
+console.log('!!ne', !!ne);
 
 {
-  console.log("!!bebras", !!bebras);
-  console.log("!!nieko", !!nieko);
+    console.log('!!bebras', !!bebras);
+    console.log('!!nieko', !!nieko);
 }
 
 if (bebras) {
-  console.log("TAIP");
+    console.log('TAIP');
 } else {
-  console.log("NE");
+    console.log('NE');
 }
 
 if (nieko) {
-  console.log("TAIP");
+    console.log('TAIP');
 } else {
-  console.log("NE");
+    console.log('NE');
 }
 
 if (5 > 13) {
-  console.log("TAIP");
+    console.log('TAIP');
 } else {
-  console.log("NE");
+    console.log('NE');
 }
 
 /*
@@ -68,45 +68,45 @@ const sk4 = Infinity;
 
 console.log(!!sk1, !!sk2, !!sk3, !!sk4);
 
-if (10 == "10") {
-  console.log("TAIP");
+if (10 == '10') {
+    console.log('TAIP');
 } else {
-  console.log("NE");
+    console.log('NE');
 }
 
-if (10 === "10") {
-  console.log("TAIP");
+if (10 === '10') {
+    console.log('TAIP');
 } else {
-  console.log("NE");
+    console.log('NE');
 }
 
-if ("Bebras" > "Barsukas") {
-  console.log("TAIP+");
+if ('Bebras' > 'Barsukas') {
+    console.log('TAIP+');
 } else {
-  console.log("NE");
+    console.log('NE');
 }
 
-const animalInput = document.querySelector("input");
+const animalInput = document.querySelector('input');
 
-animalInput.style.border = "1px solid blue";
+animalInput.style.border = '1px solid blue';
 
-animalInput.addEventListener("input", (_) => {
-  console.log("Rašo!", animalInput.value);
-  if (animalInput.value.length > 7) {
-    animalInput.style.border = "1px solid crimson";
-  } else {
-    animalInput.style.border = "1px solid blue";
-  }
+animalInput.addEventListener('input', (_) => {
+    console.log('Rašo!', animalInput.value);
+    if (animalInput.value.length > 7) {
+        animalInput.style.border = '1px solid crimson';
+    } else {
+        animalInput.style.border = '1px solid blue';
+    }
 });
 
 if (55 > 111) {
-  console.log("Šaka 1");
+    console.log('Šaka 1');
 } else if (5 == 51) {
-  console.log("Šaka 2");
+    console.log('Šaka 2');
 } else if (5 == 5) {
-  console.log("Šaka 55");
+    console.log('Šaka 55');
 } else {
-  console.log("Šaka 3");
+    console.log('Šaka 3');
 }
 
 console.clear();
@@ -114,32 +114,32 @@ console.clear();
 ///    || = arba(or)
 ///    && = ir(and)
 
-console.log("true || true", true || true);
-console.log("true || false", true || false);
-console.log("false || true", false || true);
-console.log("false || false", false || false);
+console.log('true || true', true || true);
+console.log('true || false', true || false);
+console.log('false || true', false || true);
+console.log('false || false', false || false);
 
-console.log("true && true", true && true);
-console.log("true && false", true && false);
-console.log("false && true", false && true);
-console.log("false && false", false && false);
+console.log('true && true', true && true);
+console.log('true && false', true && false);
+console.log('false && true', false && true);
+console.log('false && false', false && false);
 
 if (5 > 10 || 10 > 3) {
-  console.log("Taip");
+    console.log('Taip');
 } else {
-  console.log("Ne");
+    console.log('Ne');
 }
 
 if (5 > 10 && 10 > 3) {
-  console.log("Taip");
+    console.log('Taip');
 } else {
-  console.log("Ne");
+    console.log('Ne');
 }
 
 function rand(min, max) {
-  const minCeiled = Math.ceil(min);
-  const maxFloored = Math.floor(max);
-  return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+    const minCeiled = Math.ceil(min);
+    const maxFloored = Math.floor(max);
+    return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
 }
 let A4 = rand(50, 200);
 let B4 = rand(50, 200);
@@ -152,18 +152,18 @@ let mazesnisSkaicius4 = Math.min(A4, B4, C4);
 
 let vidutinisSkaicius4 = 0;
 if (A4 > B4 || A4 > C4) {
-  if (A4 > B4 && A4 > C4) {
-    if (B4 > C4) {
-      vidutinisSkaicius4 = B4;
+    if (A4 > B4 && A4 > C4) {
+        if (B4 > C4) {
+            vidutinisSkaicius4 = B4;
+        } else {
+            vidutinisSkaicius4 = C4;
+        }
     } else {
-      vidutinisSkaicius4 = C4;
+        vidutinisSkaicius4 = A4;
     }
-  } else {
-    vidutinisSkaicius4 = A4;
-  }
 } else if (B4 > C4) {
-  vidutinisSkaicius4 = C4;
+    vidutinisSkaicius4 = C4;
 } else {
-  vidutinisSkaicius4 = B4;
+    vidutinisSkaicius4 = B4;
 }
 console.log(vidutinisSkaicius4);

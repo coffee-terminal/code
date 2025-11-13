@@ -282,7 +282,19 @@ for (i = 0; i < 5; ++i) {
     table9_3[i].innerHTML = lygu9;
 }
 
-// console.log(table9_1);
-// const table9_2 = document.querySelector('#go9 div span:nth-child(2)');
-
 // Keturkapius, esančius tage section su id=go10, kurių plotas didesnis nei 10000 (px) nuspalvinkite raudonai.
+
+const square10 = document.querySelectorAll('#go10 div');
+
+let widthAndHeight;
+
+for (i = 0; i < 5; ++i) {
+    console.log(parseInt(square10[i].style.width));
+    console.log(parseInt(square10[i].style.height));
+    widthAndHeight =
+        parseInt(square10[i].style.width) * parseInt(square10[i].style.height);
+    console.log(' = ' + widthAndHeight);
+    if (widthAndHeight > 10000) {
+        square10[i].style.backgroundColor = 'red';
+    }
+}
