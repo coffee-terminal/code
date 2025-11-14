@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Roboto';
-    height: 5000px;
+    height: 500vh;
 
 }
 
@@ -172,9 +172,16 @@ body {
     width: 70%;
 }
 
-.containerIcons img {
-    width: 125px;
-    height: 100px;
+.containerIcons img:not(.icon4, .icon5) {
+    width: 100px;
+}
+
+.icon4 {
+    width: 80px;
+}
+
+.icon5 {
+    width: 160px;
 }
 
 .sectionCollabHelp {
@@ -205,6 +212,7 @@ body {
     flex-direction: row;
     width: 100%;
     padding: 2px;
+    border-radius: 3px;
 }
 
 .collabHelpButtonContainer button {
@@ -253,6 +261,11 @@ body {
     text-align: left;
 }
 
+.collabHelpTextContainer p b:nth-child(2) {
+    font-weight: 600;
+    letter-spacing: 1.1px;
+}
+
 
 .collabHelpImg img {
     width: 300px;
@@ -267,4 +280,52 @@ body {
 .sectionVideo p {
     width: 70%;
     text-align: center;
+}
+
+.sectionVideo iframe {
+    min-width: 800px;
+    height: 600px;
+    border: 4px solid crimson;
+    border-radius: 30px;
+}
+
+
+.projectsDone {
+    margin-top: 100px;
+    flex-direction: column;
+}
+
+.cardConteiner {
+    margin-top: 60px;
+    width: 90%;
+    justify-content: space-evenly;
+}
+
+.card img {
+    width: 400px;
+    height: 340px;
+}
+
+.card {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.cardConteiner img {
+    width: 300px;
+    height: 250px;
+}
+
+.card p {
+    color: var(--main-color-dark);
+    font-weight: bold;
+    padding-left: 10px;
+    font-size: 18px;
+}
+
+.card span {
+    color: black;
+    font-weight: 500;
+    padding-left: 10px;
 }
