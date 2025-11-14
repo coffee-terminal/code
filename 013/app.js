@@ -90,7 +90,7 @@ const animalInput = document.querySelector('input');
 
 animalInput.style.border = '1px solid blue';
 
-animalInput.addEventListener('input', (_) => {
+animalInput.addEventListener('input', () => {
     console.log('Rašo!', animalInput.value);
     if (animalInput.value.length > 7) {
         animalInput.style.border = '1px solid crimson';
