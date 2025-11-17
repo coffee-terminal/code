@@ -49,7 +49,9 @@ console.log('Didesnis' + ' ' + didesnisSkaicius);
 console.log('Mazesnis' + ' ' + mazesnisSkaicius);
 
 const result2 = didesnisSkaicius / mazesnisSkaicius;
+// if(A2 == 0 || B2 == 0){
 
+// }
 console.log('resultatas' + ' ' + result2.toFixed(2));
 
 let span1 = (document.querySelector('#go3>span').innerText = didesnisSkaicius);
