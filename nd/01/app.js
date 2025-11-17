@@ -49,16 +49,20 @@ console.log('Didesnis' + ' ' + didesnisSkaicius);
 console.log('Mazesnis' + ' ' + mazesnisSkaicius);
 
 const result2 = didesnisSkaicius / mazesnisSkaicius;
-// if(A2 == 0 || B2 == 0){
-
-// }
+if (A2 == 0 || B2 == 0) {
+}
 console.log('resultatas' + ' ' + result2.toFixed(2));
 
 let span1 = (document.querySelector('#go3>span').innerText = didesnisSkaicius);
 let span2 = (document.querySelector('#go3>span+span').innerText =
     mazesnisSkaicius);
-let span3 = (document.querySelector('#go3>span + span + span').innerText =
-    result2.toFixed(2));
+if (A2 == 0 || B2 == 0) {
+    let span3 = (document.querySelector('#go3 span:nth-child(3)').innerText =
+        'dalyba iš nulio negalima');
+} else {
+    let span3 = (document.querySelector('#go3 span:nth-child(3)').innerText =
+        result2.toFixed(2));
+}
 
 //4 Sukurkite tris kintamuosius ir naudodamiesi funkcija rand() jiems priskirkite atsitiktines reikšmes nuo 50 iki 200.
 // Iš section tage su id=go4 esančių div tagų padarykite atitinkamo dydžio (px) apskritimus.
