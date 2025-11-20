@@ -1,35 +1,35 @@
 function rand(min, max) {
-  const minCeiled = Math.ceil(min);
-  const maxFloored = Math.floor(max);
-  return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+    const minCeiled = Math.ceil(min);
+    const maxFloored = Math.floor(max);
+    return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
 }
 
-console.log("Labas, Džiava scriptai");
+console.log('Labas, Džiava scriptai');
 
 let = myVar1 = 54 + 2;
 
 console.log(myVar1);
 
-let myResultDiv = document.querySelector(".my-result");
+let myResultDiv = document.querySelector('.my-result');
 
 myResultDiv.innerText = myVar1;
-myResultDiv.style.fontSize = "160px";
+myResultDiv.style.fontSize = '160px';
 // myResultDiv.style.backgroundColor = "#015646";
 
 // font-size ====> fontSize nes kintamasis negali tureti minusu
 // 160px ===> '160px' be kabiciu butu kintamojo vardas ar skaicius
 // let spalvaH2 = "orange";
 
-let myH2 = document.querySelector("h2 + h2");
+let myH2 = document.querySelector('h2 + h2');
 
-myH2.style.letterSpacing = "5px";
-myH2.style.color = "orange";
+myH2.style.letterSpacing = '5px';
+myH2.style.color = 'orange';
 
 // parasyti Js koda kurs antra h2 nuspalvintu orange spalva
 
 let myFancyRandom = rand(5, 18);
 
-console.log("skacius" + myFancyRandom);
+console.log('skacius' + myFancyRandom);
 
 console.clear();
 
@@ -63,7 +63,7 @@ L = 2;
 
  */
 
-const MyStr = "25";
+const MyStr = '25';
 
 const myNumB = parseInt(MyStr);
 
@@ -81,7 +81,7 @@ const what = funNumber++ * ++funNumber; // 5 * 7
 
 console.log(what);
 
-let bananas = "bananas";
+let bananas = 'bananas';
 
 bananas++;
 
@@ -91,10 +91,10 @@ let daug = 5 / 0;
 
 console.log(daug, typeof daug);
 
-const animal1 = "Bebras";
-const action1 = "eina namo";
+const animal1 = 'Bebras';
+const action1 = 'eina namo';
 
-const animal1InAction1 = animal1 + " " + action1; // suklijavimas
+const animal1InAction1 = animal1 + ' ' + action1; // suklijavimas
 
 console.log(animal1InAction1);
 
