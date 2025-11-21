@@ -4,23 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Collbab Figma</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <div class="topPurple">
-        <p class="topPurplePara">India’s first mobile app for construction industry. <u>Learn More</u> </p>
+        <p class="topPurplePara">India’s first mobile app for construction industry. Learn More</p>
     </div>
 
     <header class="topHeader">
-        <img src="Collab.svg" alt="Landscape">
-
+        <img src="./Collab.svg" alt="logo">
         <div class="menu">
-            <nav class="linkContainer">
+            <nav class="linksContainer">
                 <li>About</li>
                 <li>Product</li>
                 <li>Team</li>
@@ -29,21 +28,19 @@
                 <li>Shop</li>
             </nav>
             <button class="headerButton">Request Demo</button>
+
         </div>
     </header>
 
-
-
     <main>
         <section class="firstSection flex">
-            <h1>Easy solution for builders and contractors<br>
-                to manage and execute projects within budget range</h1>
+            <h1>Easy solution for builders and contractors <br> to manage and execute projects within budget range</h1>
             <button>Request Demo</button>
         </section>
 
-        <section class="sectionElipses flex">
-            <img class="ellipseBig absolute" src="../images/ellipsebig.svg" alt="">
-            <img class="EllipseSmall absolute" src="../images/EllipseSmall.svg" alt="">
+        <section class="sectionElipses flex ">
+            <img class="ellipseBig absolute" src="../images/EllipseBig.svg" alt="">
+            <img class="ellipseSmall absolute" src="../images/EllipseSmall.svg" alt="">
             <img class="phone absolute" src="../images/Phone.svg" alt="">
             <img class="phoneLogo absolute" src="../images/PhoneLogo.svg" alt="">
 
@@ -64,94 +61,239 @@
         <section class="sectionCollabHelp flex">
             <h2>How does Collab-app help?</h2>
             <div class="collabHelpMainContainer flex">
-
                 <div class="collabHelpLeftContainer flex">
                     <div class="collabHelpButtonContainer flex">
                         <button>Vendor app</button>
                         <button>Site Supervisor app</button>
                     </div>
                     <div class="collabHelpTextContainer flex">
-                        <p><b>Work/Material request:</b> Whenever a client wants to start a work, request notifications
-                            with date and time for materials and artisians will be promted through their app.</p>
-                        <p><b>Project Management:</b> Work on multiple projects<b>... see more</b></p>
-                        <p><b>Payment:</b> Get paid for the step by step work<b>... see more</b></p>
-                        <p><b>Tutorials:</b> Explore the video tutorials to learn<b>... see more</b></p>
+                        <p class="p1"><b>Work/Material request:</b> Whenever a client wants to start a work, request
+                            notifications with date and time for materials and artisians will be promted through their
+                            app.</p>
+                        <p class="p2"><b>Project Management:</b> Work on multiple projects<b class="semiBold">... see
+                                more</b></p>
+                        <p class="p3"><b>Payment:</b> Get paid for the step by step work<b class="semiBold">... see
+                                more</b></p>
+                        <p><b>Tutorials:</b> Explore the video tutorials to learn<b class="semiBold">... see more</b>
+                        </p>
                     </div>
                 </div>
-
                 <div class="collabHelpImg">
                     <img src="../images/collabHelpImg.svg" alt="">
                 </div>
             </div>
         </section>
+
+
         <section class="sectionVideo flex">
             <h2>Fastest, Safest & Budget friendly</h2>
             <p>Managing your projects on spreadsheet or messaging app is a time-taking and inefficient way.They can't
-                link various<br> project data effectively at once place , thus you won't be able to avoid project cost
+                link various <br>project data effectively at once place , thus you won't be able to avoid project cost
                 escalation effectively .</p>
-            <iframe src="https://www.youtube.com/embed/UC9m3sGRlnE?si=F9IcUtYXk_I0_IlR&amp;start=420"
-                title="YouTube video player"
+
+            <iframe src="https://www.youtube.com/embed/UC9m3sGRlnE?si=JwVlnsoBJvQTyu1t&amp;start=420"
+                title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </section>
 
         <section class="projectsDone flex">
-            <h2 class="">Projects done on Collab</h2>
+            <h2>Projects done on Collab</h2>
 
-
-            <div class="cardConteiner flex">
+            <div class="cardContainer flex">
                 <div class="card flex">
-                    <img src="../images/x2.svg" alt="">
+                    <img src="../images/x1.svg" alt="">
                     <p>Builders</p>
                     <span>100+</span>
                 </div>
 
                 <div class="card flex">
-                    <img src="../images/x2.svg" alt="">
+                    <img src="../images/x2.svg"" alt="">
                     <p>Contractors</p>
                     <span>50+</span>
                 </div>
 
-                <div class="card flex">
-                    <img src="../images/x3.svg" alt="">
+                <div class=" card flex">
+                    <img src="../images/x3.svg"" alt="">
                     <p>Design Build Firm</p>
                     <span>30+</span>
                 </div>
+
             </div>
 
         </section>
-        <section class="readyToStart flex">
-            <h2>Ready to start with Collab apps?</h2>
-            <p class="readyToStartTopP">Choose the package that suits you.</p>
-            <div class="readyToStartTopDiv flex">
-                <p class="monthly">Monthly</p>
-                <img src="../images/ToggleRight.png" alt="">
-                <p class="yearly">Yearly</p>
-                <p class="discount">10% discount</p>
+
+
+        <section class=" bigCards flex">
+                    <h2>Ready to start with Collab apps?</h2>
+                    <p class="bigCardsTopParagraph">Choose the package that suits you.</p>
+                    <div class="MonthYearly flex">
+                        <p class="monthly">Monthly</p>
+                        <img src="../images/ToggleRight.png" alt="">
+                        <p class="yearly">Yearly</p>
+                        <p class="discount">10% discount</p>
+                    </div>
+
+                    <div class="bigcardsContainer flex">
+
+                        <div class="bigCard flex">
+                            <p class="bigCardP">Basic</p>
+                            <h2>Rs.5000</h2>
+                            <button class="bigCardbutton">Request Demo</button>
+                            <ul>
+                                <li>Create BoQ</li>
+                                <li>Release Purchase Orders</li>
+                                <li>Cash flow analysis</li>
+                            </ul>
+                        </div>
+
+                        <div class="bigCard bigCard2 flex">
+                            <p class="bigCardP">Essential</p>
+                            <h2>Rs.5000</h2>
+                            <button class="bigCardbutton">Request Demo</button>
+                            <ul>
+                                <li>Create BoQ</li>
+                                <li>Release Purchase Orders</li>
+                                <li>Cash flow analysis</li>
+                                <li>Vendor App</li>
+                                <li>Site Engineer App</li>
+                                <li>Client App</li>
+                            </ul>
+                        </div>
+
+                        <div class="bigCard cardTree flex">
+                            <p class="bigCardP">Enterprise</p>
+                            <h2>Contact <br>sales <br> team</h2>
+                            <button class="bigCardbutton bigCardbuttonThree">Request Demo</button>
+                            <p class="unlock">Unlock the full power to work <br> effectively. Click “Request <br>Demo”
+                                now.</p>
+                        </div>
+
+
+
+                    </div>
+        </section>
+
+
+        <section class="commentSection flex">
+            <div class="commentSectionStarRating">
+                <img src="../images/Group8.png" alt="">
             </div>
-            <div class="readyToStartCardContainer">
-                <div class="readyToStartCard flex">
-                    <p>Basic</p>
-                    <h2>Rs.5000</h2>
-                    <button>Request Demo</button>
-                    <ul>
-                        <li>Create BoQ</li>
-                        <li>Release Purchase Orders</li>
-                        <li>Cash flow analysis</li>
-                    </ul>
+            <div class="divComments flex">
+                <img src="../images/ArrowLeft.png" alt="">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi, nisl eget tristique molestie. Quisque
+                    pharetra tincidunt interdum nunc, ac eget nisi, lectus interdum. Cras aliquet curabitur in morbi
+                    facilisi imperdiet non sollicitudin. Molestie volutpat vulputate eu nunc in vulputate sit. Varius
+                    neque accumsan libero, augue tortor. Id metus rutrum fringilla nibh neque, at bibendum. Diam libero
+                    morbi aliquet mi gravida velit enim.</p>
+                <img src="../images/ArrowRight.png" alt="">
+            </div>
+            <div class="commentSectionFace flex">
+                <img src="../images/Ellipse24.png" alt="">
+                <p>Designation</p>
+            </div>
+
+        </section>
+
+        <section class="joinUs flex">
+            <div class="joinUsH2 flex">Join us</div>
+            <div class="joinUsP flex">
+                <p>At Staart, we’re all about delivering better experiences for our customers. Join our team to make
+                    impact on the next billion users in the construction industry</p>
+            </div>
+            <div>
+                <button class="joinUsButton flex">Explore Opportunities</button>
+            </div>
+            <div class="Vector1 flex"><img src="../images/Vector1.svg" alt=""></div>
+            <div class="joinUsPeople">
+
+                <img src="../images/Ellipse16.png" alt="">
+                <img src="../images/Ellipse17.png" alt="">
+                <img src="../images/Ellipse18.png" alt="">
+                <img src="../images/Ellipse19.png" alt="">
+                <img src="../images/Ellipse20.png" alt="">
+                <img src="../images/Ellipse21.png" alt="">
+                <img src="../images/Ellipse22.png" alt="">
+                <img src="../images/Ellipse23.png" alt="">
+            </div>
+            <div class="joinUsPeopleP">
+                <p>You?</p>
+            </div>
+        </section>
+
+        <section class="download-apps" id="download">
+            <div class="container">
+                <h2>Download the Collab mobile apps?</h2>
+                <div class="app-buttons">
+                    <button class="btn-outline">Try Free Demo</button>
+                    <button class="btn-outline">Vendor app</button>
+                    <button class="btn-outline">Site engineer app</button>
                 </div>
-                <div></div>
-                <div></div>
             </div>
         </section>
 
-    </main>
+        <section class="collabMap">
+            <div class="containerX3">
+                <p>Still have a question ?</p>
+                <p>Phanikondru@gmail.com<br>9676989240</p>
+            </div>
+            <div class="mapLink">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2990.274257380938!2d-70.56068388481569!3d41.45496659976631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e52963ac45bbcb%3A0xf05e8d125e82af10!2sDos%20Mas!5e0!3m2!1sen!2sus!4v1671220374408!5m2!1sen!2sus"
+                    width="800" height="500" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+</body>
+</main>
 
-    <footer></footer>
 
+<footer>
+    <div class="footer">
+        <div class="footerInformation">
+            <img src="../images/Collab.svg" class="logo">
+            <p class="informationText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra faucibus
+                facilisis sem eget sed amet consectetur tincidunt mauris.</p>
+            <p class="followUsText">Follow us on:</p>
+            <div class="socialImages">
+                <a href="#"><img src="../images/Facebook.svg"></a>
+                <a href="#"><img src="../images/LinkedIn.svg"></a>
+                <a href="#"><img src="../images/Instagram.svg"></a>
+                <a href="#"><img src="../images/Youtube.svg"></a>
+            </div>
 
-
-
+        </div>
+        <div class="footerLinks">
+            <div class="links">
+                <p>Company</p>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Product</a></li>
+                    <li><a href="#">Team</a></li>
+                </ul>
+                <div class="contactUs">
+                    <span>Contact Us at:</span> <a href="">phanikondru@gmail.com</a>
+                </div>
+            </div>
+            <div class="links">
+                <p>Resources</p>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="links">
+                <p>Legal</p>
+                <ul>
+                    <li><a href="#">Terms of service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="copyright flex">
+        <span>@2022 Collab | All Rights Reserved</span>
+    </div>
+</footer>
 
 </body>
 
