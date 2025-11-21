@@ -572,7 +572,7 @@ h2 {
 }
 
 .download-apps .btn-outline {
-    background-color: #9A54BC;
+    background: white;
     color: #9A54BC;
     border: 3px solid white;
     padding: 16px 15px;
