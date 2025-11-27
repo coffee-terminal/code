@@ -244,10 +244,66 @@ for (let i = 0; i < 6; i++) {
 }
 
 //9.Uždavinyje prieš tai nupieštam kvadratui nupieškite geltonas istrižaides (geltonai nudažykite atitinkamus simbolius). #ciklasCikle
-// const color = 'red';
-// const elts = document.querySelector('.SymbolClass');
-// const symboliai = elts.innerHTML[3];
+const C9Element = document.createElement('span');
 
-// elts.style.color = 'black';
-// console.log(symboliai);
-// elts[2].style.color = color;
+C9Element.innerText = '\n';
+
+bodyElement2.append(C9Element);
+
+const A9 = '&#9632;';
+
+const A9symbolDiv = document.createElement('div');
+A9symbolDiv.className = 'x41two';
+A9symbolDiv.style.width = '41px';
+A9symbolDiv.style.height = '41px';
+A9symbolDiv.style.display = 'flex';
+A9symbolDiv.style.color = 'yellow';
+// A9symbolDiv.style.flexDirection = 'column';
+A9symbolDiv.style.flexWrap = 'wrap';
+
+A9symbolDiv.style.backgroundColor = 'lightgray';
+
+bodyElement2.append(A9symbolDiv);
+
+const A9symbolDivselect = document.querySelector('.x41two');
+let k = 6;
+for (let i = 0; i < 6; i++) {
+    k--;
+    console.log(k);
+
+    for (let t = 0; t < 6; t++) {
+        if (t == i) {
+            const A9symbolSpan1 = document.createElement('span');
+            A9symbolSpan1.className = 'SymbolClassSpan';
+
+            A9symbolSpan1.style.margin = 0;
+            A9symbolSpan1.style.color = 'green';
+            A9symbolSpan1.style.letterSpacing = '-3px';
+            A9symbolSpan1.style.lineHeight = '6.5px';
+            A9symbolSpan1.style.color = 'yellow';
+            A9symbolSpan1.innerHTML += A9;
+            A9symbolDivselect.append(A9symbolSpan1);
+        } else if (t == k) {
+            const A9symbolSpan1 = document.createElement('span');
+            A9symbolSpan1.className = 'SymbolClassSpan';
+
+            A9symbolSpan1.style.margin = 0;
+            A9symbolSpan1.style.color = 'green';
+            A9symbolSpan1.style.letterSpacing = '-3px';
+            A9symbolSpan1.style.lineHeight = '6.5px';
+            A9symbolSpan1.style.color = 'yellow';
+            A9symbolSpan1.innerHTML += A9;
+            A9symbolDivselect.append(A9symbolSpan1);
+        } else {
+            const A9symbolSpan = document.createElement('p');
+            A9symbolSpan.className = 'SymbolClassP';
+
+            A9symbolSpan.style.margin = 0;
+            A9symbolSpan.style.color = 'green';
+            A9symbolSpan.style.letterSpacing = '-3px';
+            A9symbolSpan.style.lineHeight = '6.5px';
+            A9symbolSpan.innerHTML += A9;
+            A9symbolDivselect.append(A9symbolSpan);
+        }
+    }
+}
