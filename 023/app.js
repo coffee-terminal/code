@@ -1,54 +1,51 @@
-console.log('Labas Apiau!');
+console.log('Labas, Apiau!');
 
-fetch('https://jsonplaceholder.typicode.com/todos/1') // siunčia užklausa
-    .then((response) => response.json()) // laukiam tada JSON gautą rezultatą
+fetch('https://jsonplaceholder.typicode.com/todos/1') // siuncia uzklausa
+    .then((response) => response.json()) // laukiam tada JSON gauta rezultata
     .then((json) => console.log(json)); // kai yra JSON tada loginam
 
-// Turiu objektą
+//turiu objekta
 
 const namas = {
     kaminas: true,
     kambariai: 5,
-    adresas: 'Pievos g. 15',
+    adresas: 'Pievos g.',
 };
-
 console.log(namas);
 
-// Reikia perduoti per internetą, todėl reikia versti į stringą (tekstą)
+// Reikia perduoti per interneta, todel reikia versti i stringa(teksta)
 
 const objektasKaipStringas = JSON.stringify(namas);
 
 console.log(objektasKaipStringas);
 
-// Perduodam
+//Perduodam
 
-// Reikia vėl atversti į objektą
+//Reikia vel atversti i objekta
 
 const velNamas = JSON.parse(objektasKaipStringas);
 
 console.log(velNamas);
 
-const usersUl = document.querySelector('#users-container');
-
+const userUl = document.querySelector('#users-container');
 const printUserList = (users) => {
     users.forEach((user) => {
-        const li = document.createElement('li'); // tuščias li elementas
-        const userName = user.name; // paimu iš struktūros name
-        const phrase = user.company.catchPhrase; // paimu frazę
+        const li = document.createElement('li'); // tuscias li elementas
+        const userName = user.name; // paimu is strukturos name
+        const phrase = user.company.catchPhrase; // paimu fraze
         const id = user.id;
-        const idVat = (id * 21) / 100; // čia matematika
-        li.innerText = userName + ': ' + phrase; // į li dedu paimtą name ir frazę
+        const idVat = (id * 21) / 100;
+        li.innerText = userName + ': ' + phrase; // i li dedu paimta name
         li.classList.add('user');
-        usersUl.appendChild(li);
-        const liVat = document.createElement('li'); // tuščias li elementas
+        userUl.append(li);
+        const liVat = document.createElement('li');
         liVat.innerText = idVat;
-        liVat.classList.add('vated');
-        usersUl.appendChild(liVat);
+        li.classList.add('livat');
+        userUl.append(liVat);
     });
 };
-
-fetch('https://jsonplaceholder.typicode.com/users') // siunčia užklausa
-    .then((res) => res.json()) // laukiam tada JSON gautą rezultatą
+fetch('https://jsonplaceholder.typicode.com/users') // siuncia uzklausa
+    .then((res) => res.json()) // laukiam tada JSON gauta rezultata
     .then((users) => {
         console.log(users);
         printUserList(users);
