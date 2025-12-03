@@ -99,3 +99,91 @@ if (getOnePenPrice(product1) < getOnePenPrice(product2)) {
 } else {
     console.log(product2.title);
 }
+
+// Naujos statybos name parduodami du butai (analogija product1 ir product2)
+
+// Butas. numeris: 45; užbaigtumas: "euroremontas", balkonas: nėra, kambariai: virtuvė 10m2,
+// miegamasis: 15m2, svetainė: 18m2; kaina 75500eur
+console.clear();
+
+const butas1 = {
+    butoNumeris: 45,
+    uzbaigtumas: 'euroremontas',
+    balkonas: 'nėra',
+    kambariai: [
+        {
+            kambarioTipas: 'virtuvė',
+            kambarioM2: 10,
+        },
+        {
+            kambarioTipas: 'miegamasis',
+            kambarioM2: 15,
+        },
+        {
+            kambarioTipas: 'svetainė',
+            kambarioM2: 18,
+        },
+    ],
+    kainaEur: 75500,
+};
+
+// Butas. numeris: 12; užbaigtumas: "neįrengtas", balkonas: yra,  kambariai: virtuvė 9m2,
+// miegamasis: 12m2, svetainė: 20m2, vaikų kambarys: 14m2; kaina 92500eur
+
+const butas2 = {
+    butoNumeris: 12,
+    uzbaigtumas: 'neįrengtas',
+    balkonas: 'yra',
+    kambariai: [
+        {
+            kambarioTipas: 'virtuvė',
+            kambarioM2: 9,
+        },
+        {
+            kambarioTipas: 'miegamasis',
+            kambarioM2: 12,
+        },
+        {
+            kambarioTipas: 'svetainė',
+            kambarioM2: 20,
+        },
+        {
+            kambarioTipas: 'vaikų kambarys',
+            kambarioM2: 14,
+        },
+    ],
+    kainaEur: 92500,
+};
+
+// Klausimas pirmas: Kuris butas turi daugiau kambarių?
+// Klausimas antras: Kurio buto kvadratinis metras yra brangesnis (nesikartojome šito, tiesiog kam
+//  per paprastas pirmas klausimas, kad turėtų ką veikti - tema masyvo metodai)
+
+if (butas1.kambariai.length < butas2.kambariai.length) {
+    console.log('Butas numeriu: ' + butas2.butoNumeris + ' turi daugiau kambarių');
+} else {
+    console.log('Butas numeriu: ' + butas1.butoNumeris + ' turi daugiau kambarių');
+}
+let kambariuM2 = 0;
+let kvadratoKaina = [0];
+let brangesnis = kvadratoKaina[0];
+const butai = [butas1, butas2];
+
+for (let i = 0; i < butai.length; i++) {
+    for (let t = 0; t < butai[i].kambariai.length; t++) {
+        kambariuM2 += butai[i].kambariai[t].kambarioM2;
+    }
+    kvadratoKaina[i] = butai[i].kainaEur / kambariuM2;
+
+    console.log(
+        'Butas numeriu: ' + butai[i].butoNumeris + ' Kaina: ' + butai[i].kainaEur + ' eur',
+        kambariuM2 + ' m2',
+        kvadratoKaina[i].toFixed(2) + ' m2/eur'
+    );
+
+    if (kvadratoKaina[i] > brangesnis) {
+        brangesnis = kvadratoKaina[i];
+        brangesnisButas = butai[i].butoNumeris;
+    }
+}
+console.log('Butas numeriu ' + brangesnisButas + ' kvadratinis metras yra brangesnis. m2/eur kaina: ' + brangesnis.toFixed(2));

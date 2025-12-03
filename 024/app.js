@@ -112,7 +112,7 @@ const animalPlus1Age = animals.map((animal) => {
 });
 
 console.log(animalPlus1Age);
-
+console.clear();
 // 3. Surande masyve tai kas mus domina  ===> find
 
 const wolf = animals.find((animal) => {
