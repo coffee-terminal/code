@@ -109,7 +109,7 @@ console.clear();
 const butas1 = {
     butoNumeris: 45,
     uzbaigtumas: 'euroremontas',
-    balkonas: 'nėra',
+    balkonas: false,
     kambariai: [
         {
             kambarioTipas: 'virtuvė',
@@ -133,7 +133,7 @@ const butas1 = {
 const butas2 = {
     butoNumeris: 12,
     uzbaigtumas: 'neįrengtas',
-    balkonas: 'yra',
+    balkonas: true,
     kambariai: [
         {
             kambarioTipas: 'virtuvė',
@@ -164,6 +164,7 @@ if (butas1.kambariai.length < butas2.kambariai.length) {
 } else {
     console.log('Butas numeriu: ' + butas1.butoNumeris + ' turi daugiau kambarių');
 }
+
 let kambariuM2 = 0;
 let kvadratoKaina = [0];
 let brangesnis = kvadratoKaina[0];

@@ -108,7 +108,7 @@ animals.forEach((animal) => {
 //2. Sukuriame patobulintą masyvą iš seno masyvo
 
 const animalPlus1Age = animals.map((animal) => {
-    return { ...animal, age: (animal.age = 0) }; // ...  animal kopija seno objekto, age: užrašom ant viršaus naują reikšmę
+    return { ...animal, age: (animal.age += 1) }; // ...  animal kopija seno objekto, age: užrašom ant viršaus naują reikšmę
 });
 
 console.log(animalPlus1Age);
