@@ -153,7 +153,36 @@ function saleHotdogs(n) {
     return SaleHotDogs;
 }
 console.log('------------------------------');
+function padIt(str, n) {
+    pad = '*';
+    times = 1;
+    while (n >= times) {
+        if (times % 2 == 0) {
+            str = str + pad;
+        } else {
+            str = pad + str;
+        }
+        times++;
+    }
+    return str;
+}
 console.log('------------------------------');
+function pickIt(arr) {
+    let odd = [],
+        even = [];
+    for (let i = 0; i < arr.length; i++) {
+        x = arr[i];
+        if (x % 2 == 0) {
+            even.push(x);
+        } else {
+            odd.push(x);
+        }
+    }
+    return [odd, even];
+}
+const array2 = [1, 2];
+console.log(pickIt(array2));
+
 console.log('------------------------------');
 console.log('------------------------------');
 console.log('------------------------------');
