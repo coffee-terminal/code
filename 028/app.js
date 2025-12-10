@@ -64,7 +64,7 @@ sq1.addEventListener('click', (e) => {
 });
 
 sq2.addEventListener('click', (e) => {
-    e.stopPropagation(); // stabdo evento plitima i tevinius elementus
+    // e.stopPropagation(); // stabdo evento plitima i tevinius elementus
     e.target.style.backgroundColor = 'crimson';
 });
 
