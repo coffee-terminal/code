@@ -131,28 +131,54 @@ console.log(Number.isFinite(10 * 'string')); // false
 
 // Paversti 456 į string naudojant
 // Paversti 17 + 18 rezultatą į string.
+const number1 = (456).toString();
 
+console.log(typeof number1);
+console.log(typeof (17 + 18).toString());
 // 2. Apvalinimas su .toFixed()
 
 // Apvalinti 9.8765 iki 1 skaitmens po kablelio.
 // Apvalinti 3.14159 iki 3 skaitmenų po kablelio.
+const number2 = 9.8765;
 
+console.log(number2.toFixed(2));
+console.log((3.14159).toFixed(3));
 // 3. Apvalinimas su .toPrecision()
 
 // Suformatuoti 5.6789 iki 1 skaitmens.
 // Suformatuoti 5.6789 iki 4 skaitmenų.
 // Suformatuoti 12345.6789 iki 3 skaitmenų.
+const number3 = 5.6789;
+const number4 = 12345.6789;
 
+console.log(number3.toPrecision(1));
+console.log((5.6789).toPrecision(4));
+console.log(number4.toPrecision(3));
+// console.log((3.14159).toFixed(3));
 // 4. Reikšmių pavertimas į skaičius
 
 // Paversti "42.7" į skaičių
+const number5 = '42.7';
+
+console.log(typeof Number(number5), Number(number5));
+
 // Paversti true ir false į skaičius.
+
+console.log('TRUE', Number(true), 'FALSE', Number(false));
 // Išgauti 12 iš "12px".
+console.log('12px', parseInt('12px'));
+
 // Išgauti 12.34 iš "12.34px".
+console.log(typeof (12 + 'px'), 12 + 'px');
 
 // 5. Skaičių tikrinimas
 
 // Patikrinti ar 5.5 yra sveikasis skaičius
+console.log(Number.isInteger(5.5));
 // Patikrinti ar NaN yra NaN
+console.log(Number.isNaN(NaN));
+
 // Patikrinti ar 10/2 yra baigtinis skaičius
+console.log(Number.isFinite(10 / 2));
 // Patikrinti ar skaičius 12340123456789000 yra tinkamas saugoti kaip 'number'
+console.log(Number.isSafeInteger(12340123456789000));

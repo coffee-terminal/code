@@ -185,9 +185,12 @@ console.log(diena.split()); // ['Šiandien gera diena']
 // 1. Padaryti visą tekstą mažosiomis raidėmis
 
 // Tekstas: "Labas Pasauli" → "labas pasauli"
+const tekstas = 'Labas Pasauli';
+console.log(tekstas.toLowerCase());
 // Metodas: toLowerCase()
 
 // 2. Padaryti visą tekstą didžiosiomis raidėmis
+console.log(tekstas.toLocaleUpperCase());
 
 // Tekstas: "labas pasauli" → "LABAS PASAULI"
 // Metodas: toUpperCase()
@@ -195,35 +198,54 @@ console.log(diena.split()); // ['Šiandien gera diena']
 // 3. Pašalinti tarpus pradžioje ir pabaigoje
 
 // Tekstas: " Labas " → "Labas"
+const tekstasLabas = ' Labas ';
+console.log(tekstasLabas.trim());
+
 // Metodas: trim()
 
 // 4. Suskaičiuoti žodžius sakinyje
 
 // Tekstas: "Šiandien gera diena" → 3 žodžiai
 // Metodas: split(" ")
+const tekstasSiandiena = 'Šiandien gera diena';
+console.log(tekstasSiandiena.split(' '));
 
 // 5. Sukurkite trumpą pranešimą, kuris rodo tik pirmą žodį sakinyje.
 // "Šiandien gera diena"  → "Šiandien"
-
+console.log(tekstasSiandiena.slice(0, 8));
 // 6. Pakeisti pirmą raidę sakinyje
 
 // Tekstas: "labas" → "Labas"
 // Metodas: replace() arba slice() + toUpperCase()
+const tekstaslabasToUpperCase = 'labas';
+
+console.log(tekstaslabasToUpperCase.replace('l', 'L'));
 
 // 7. Pakeisti visus tam tikrus simbolius - visas 'a' pakeisti į 'o'
 // Tekstas: "banana" → "bonono"
+const banana = 'banana';
+console.log(banana.replaceAll('a', 'o'));
 
 // 8. Patikrinti, ar tekstas prasideda konkrečia fraze
 
 // Tekstas: "Sveiki, pasauli" → ar prasideda "Sveiki"?
 // Metodas: startsWith()
+const sveiki = 'Sveiki, pasauli';
+
+console.log(sveiki.startsWith('Sveiki'));
 
 // 9. Patikrinti, ar tekstas baigiasi konkrečia fraze
 
 // Tekstas: "Man patinka JavaScript" → ar baigiasi "Script"?
 // Metodas: endsWith()
+const JavaScript = 'Man patinka JavaScript';
 
+console.log(JavaScript.endsWith('JavaScript'));
 // 10. Patikrinti, ar tekste yra konkreti dalis
 
 // Tekstas: "Programavimas yra smagus" → ar yra "yra"?
 // Metodas: includes()
+
+const Programavimas = 'Programavimas yra smagus';
+
+console.log(Programavimas.includes('yra'));
