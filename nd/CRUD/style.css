@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    padding: 10PX;
+    background-color: rgb(72, 72, 72);
+    font-family: monospace;
+    font-size: 20PX;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+fieldset {
+
+    padding: 20PX;
+    background-image: url(./farmland.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+legend {
+    padding: 0 10px;
+}
+
+ol {
+    list-style-type: none;
+
+}
+
+#pridetiButton {
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+
+    background: #22C1C3;
+    background: linear-gradient(167deg, rgba(34, 193, 195, 0.05) 0%, rgba(8, 166, 45, 0.3) 100%);
+    border-radius: 5px;
+    padding: 3px;
+    border: 1px solid lightgray;
+}
