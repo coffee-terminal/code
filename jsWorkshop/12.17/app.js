@@ -26,10 +26,12 @@ const countDown = (_) => {
     minuteEl.innerHTML = m;
     secondEl.innerHTML = s;
     console.log(s);
-    setTimeout(countDown, 1000);
-    // if (timeLeft <= 1256900000) {
-    //     return;
-    // }
+
+    if (timeLeft <= 1256105724) {
+        return;
+    } else {
+        setTimeout(countDown, 1000);
+    }
 };
 
 countDown();
