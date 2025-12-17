@@ -79,6 +79,7 @@ input[type=color] {
     gap: 30px;
     justify-content: flex-start;
     align-items: center;
+    flex-direction: row;
 }
 
 .delete-button {

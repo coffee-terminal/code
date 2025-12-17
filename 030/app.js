@@ -61,34 +61,34 @@ const render = (_) => {
         const rowHtml = listRowTemplate.content.cloneNode(true);
         const colorSq = rowHtml.querySelector('[data-color-sq]');
 
-        //       const deleteButton = rowHtml.querySelector('[data-delete-sq]');
+        const deleteButton = rowHtml.querySelector('[data-delete-sq]');
 
         // colorItem.id sugeneruotas Store metode id
-        //dataset.id // i elementa prideda atributa 'data-id'
+        // dataset.id; // i elementa prideda atributa 'data-id'
         // dataset.id = colorItem.id atributui priskiria reiksme data-id = '1326623'
-        //  deleteButton.dataset.id = colorItem.id;
-        //deleteButton.addEventListener('click', (e) => {
-        // e eventas
-        // e.target is evento gautas paspaustas mygtuko elementas
-        // e.target.dataset kreipimasis i elemento 'data-' atributus
-        // e.target.dataset.id kreipimasis i atributa 'data-id;
-        //           const id = parseInt(e.target.dataset.id);
-        //           Destroy(id);
-        // });
+        deleteButton.dataset.id = colorItem.id;
+        deleteButton.addEventListener('click', (e) => {
+            // e eventas
+            // e.target is evento gautas paspaustas mygtuko elementas
+            // e.target.dataset kreipimasis i elemento 'data-' atributus
+            // e.target.dataset.id kreipimasis i atributa 'data-id;
+            const id = parseInt(e.target.dataset.id);
+            Destroy(id);
+        });
 
-        ///* EDIT */
+        /* EDIT */
 
-        // const editInput = rowHtml.querySelector('[data-edit-color-input]');
-        // const editButton = rowHtml.querySelector('[data-edit-color-button]');
-        // editInput.value = colorItem.color; // senu duomenu perrrasymas i edit forma
-        // editButton.dataset.id = colorItem.id;
+        const editInput = rowHtml.querySelector('[data-edit-color-input]');
+        const editButton = rowHtml.querySelector('[data-edit-color-button]');
+        editInput.value = colorItem.color; // senu duomenu perrrasymas i edit forma
+        editButton.dataset.id = colorItem.id;
 
-        // editButton.addEventListener('click', (e) => {
-        //     const id = parseInt(e.target.dataset.id);
-        //     const color = editInput.value;
+        editButton.addEventListener('click', (e) => {
+            const id = parseInt(e.target.dataset.id);
+            const color = editInput.value;
 
-        //     Update(id, color);
-        // });
+            Update(id, color);
+        });
 
         colorSq.style.backgroundColor = colorItem.color + '70'; // + permatomumas
         colorSq.style.borderColor = colorItem.color;

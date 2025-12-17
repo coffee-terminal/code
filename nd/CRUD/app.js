@@ -67,13 +67,33 @@ const render = (_) => {
     const listRowTemplate = document.querySelector('[data-list-template]');
     listBin.innerHTML = '';
     LIST.forEach((animal) => {
+        //create
         const rowHtml = listRowTemplate.content.cloneNode(true);
         const animalId = rowHtml.querySelector('[data-animal-id]');
-        animalId.innerHTML = `${animal.gyvunas} ${animal.svoris} `;
-        animalId.style.width = '40%';
-        animalId.style.backgroundColor = 'rgb(255,255,255,0.2)';
-        animalId.style.lineHeight = '40px';
-        animalId.style.borderBottom = '1px solid white';
+        animalId.innerHTML = `${animal.gyvunas} ${animal.svoris} kg `;
+
+        //delete
+        const deleteButton = rowHtml.querySelector('[data-delete-animal]');
+
+        deleteButton.dataset.id = animal.id;
+        deleteButton.addEventListener('click', (e) => {
+            const id = parseInt(e.target.dataset.id);
+            Destroy(id);
+        });
+
+        //edit
+        const editInput = rowHtml.querySelector('[data-edit-weight-input]');
+        const editButton = rowHtml.querySelector('[data-edit-weight-button]');
+        editInput.value = animal.svoris; // senu duomenu perrrasymas i edit forma
+        editButton.dataset.id = animal.id;
+
+        editButton.addEventListener('click', (x) => {
+            const id = parseInt(x.target.dataset.id);
+            const kg = editInput.value;
+
+            Update(id, kg);
+        });
+
         listBin.appendChild(rowHtml);
     });
 };
@@ -91,6 +111,18 @@ const Store = (data, meta) => {
         writeLocalStorage();
         render();
     }
+};
+
+const Update = (id, data) => {
+    LIST = LIST.map((item) => (item.id == id ? { ...item, svoris: data } : item));
+    writeLocalStorage();
+    render();
+};
+
+const Destroy = (id) => {
+    LIST = LIST.filter((color) => color.id != id); //ismetam is saraso kvadratuka su nurodytu id
+    writeLocalStorage();
+    render();
 };
 
 init();

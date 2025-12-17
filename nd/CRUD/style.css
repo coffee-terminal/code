@@ -21,11 +21,6 @@ legend {
     padding: 0 10px;
 }
 
-ol {
-    list-style-type: none;
-
-}
-
 #pridetiButton {
     color: white;
     background-color: transparent;
@@ -36,4 +31,46 @@ ol {
     border-radius: 5px;
     padding: 3px;
     border: 1px solid lightgray;
+}
+
+.list-row {
+    max-width: 600px;
+    padding: 5px;
+    gap: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    /* width: 40%; */
+    line-height: 40px;
+    border-bottom: 1px solid white;
+    background-color: rgb(255, 255, 255, 0.2);
+
+}
+
+.other-group {
+    min-width: 225px;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 5px
+}
+
+.animal-id {
+    display: flex;
+    flex-wrap: nowrap;
+    min-width: 245px;
+    font-size: 30px;
+    column-gap: 20px;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input {
+    width: 30px;
+    height: 15px;
 }
