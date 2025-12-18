@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <title>CRUD</title>
+</head>
+
+<body>
+
+    <!-- Ganykla. Turim trijų rūšių gyvulius: avis, antis ir antilopes.
+    Kiekvienas gyvulys turi savo svorį.
+    Parašyti localStorage CRUD aplikaciją,
+    kurioje būtų galima pridėti naujus gyvulius su jų svoriais į ganyklą,
+    ištrinti iš ganyklos
+    ir redaguoti kiekvieno jų svorį. -->
+
+    <!-- 
+    <div class="tekstas">Gamykla</div>
+    <hr>
+    <div class="avis">avis</div>
+    <div class="antis">antis</div>
+    <div class="antilopes">antilopes</div> -->
+
+
+    <fieldset class="create">
+        <legend>
+            <H1>Ganykla</H1>
+        </legend>
+        <label for="ganyklosGyvuliai">Gyvulys</label>
+        <select name="animals" id="animals" value="rinktis" placeholder="rinktis" data-animal-input>
+            <option value="">- rinktis -</option>
+            <option value="avis">avis</option>
+            <option value="antis">antis</option>
+            <option value="antilopes">antilopė</option>
+        </select>
+        <input type="number" data-weight-button id="svoris" min="0" max="400" placeholder="kg.">
+        <button id="pridetiButton" data-add-animal-button>Pridėti į ganyklą</button>
+        <ol id="ol"></ol>
+
+
+        <section class="list" data-colors-list>
+
+        </section>
+
+        <template data-list-template>
+            <div class="list-row" data-list-row>
+                <div class="animal-id" data-animal-id></div>
+                <div class="other-group">
+                    <input type="weightEdit" data-edit-weight-input placeholder="kg.">
+                    <button data-edit-weight-button>Pakeisti svorį</button>
+                    <button class="delete-button" data-delete-animal>panaikinti</button>
+                </div>
+            </div>
+        </template>
+
+    </fieldset>
+
+</body>
+
+</html>
