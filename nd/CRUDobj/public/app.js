@@ -1,88 +1,298 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
+
+/***/ "./node_modules/uuid/dist/native.js"
+/*!******************************************!*\
+  !*** ./node_modules/uuid/dist/native.js ***!
+  \******************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const randomUUID = typeof crypto !== 'undefined' && crypto.randomUUID && crypto.randomUUID.bind(crypto);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({ randomUUID });
+
+
+/***/ },
+
+/***/ "./node_modules/uuid/dist/regex.js"
+/*!*****************************************!*\
+  !*** ./node_modules/uuid/dist/regex.js ***!
+  \*****************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$/i);
+
+
+/***/ },
+
+/***/ "./node_modules/uuid/dist/rng.js"
+/*!***************************************!*\
+  !*** ./node_modules/uuid/dist/rng.js ***!
+  \***************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ rng)
+/* harmony export */ });
+let getRandomValues;
+const rnds8 = new Uint8Array(16);
+function rng() {
+    if (!getRandomValues) {
+        if (typeof crypto === 'undefined' || !crypto.getRandomValues) {
+            throw new Error('crypto.getRandomValues() not supported. See https://github.com/uuidjs/uuid#getrandomvalues-not-supported');
+        }
+        getRandomValues = crypto.getRandomValues.bind(crypto);
+    }
+    return getRandomValues(rnds8);
+}
+
+
+/***/ },
+
+/***/ "./node_modules/uuid/dist/stringify.js"
+/*!*********************************************!*\
+  !*** ./node_modules/uuid/dist/stringify.js ***!
+  \*********************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   unsafeStringify: () => (/* binding */ unsafeStringify)
+/* harmony export */ });
+/* harmony import */ var _validate_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./validate.js */ "./node_modules/uuid/dist/validate.js");
+
+const byteToHex = [];
+for (let i = 0; i < 256; ++i) {
+    byteToHex.push((i + 0x100).toString(16).slice(1));
+}
+function unsafeStringify(arr, offset = 0) {
+    return (byteToHex[arr[offset + 0]] +
+        byteToHex[arr[offset + 1]] +
+        byteToHex[arr[offset + 2]] +
+        byteToHex[arr[offset + 3]] +
+        '-' +
+        byteToHex[arr[offset + 4]] +
+        byteToHex[arr[offset + 5]] +
+        '-' +
+        byteToHex[arr[offset + 6]] +
+        byteToHex[arr[offset + 7]] +
+        '-' +
+        byteToHex[arr[offset + 8]] +
+        byteToHex[arr[offset + 9]] +
+        '-' +
+        byteToHex[arr[offset + 10]] +
+        byteToHex[arr[offset + 11]] +
+        byteToHex[arr[offset + 12]] +
+        byteToHex[arr[offset + 13]] +
+        byteToHex[arr[offset + 14]] +
+        byteToHex[arr[offset + 15]]).toLowerCase();
+}
+function stringify(arr, offset = 0) {
+    const uuid = unsafeStringify(arr, offset);
+    if (!(0,_validate_js__WEBPACK_IMPORTED_MODULE_0__["default"])(uuid)) {
+        throw TypeError('Stringified UUID is invalid');
+    }
+    return uuid;
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (stringify);
+
+
+/***/ },
+
+/***/ "./node_modules/uuid/dist/v4.js"
+/*!**************************************!*\
+  !*** ./node_modules/uuid/dist/v4.js ***!
+  \**************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _native_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./native.js */ "./node_modules/uuid/dist/native.js");
+/* harmony import */ var _rng_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./rng.js */ "./node_modules/uuid/dist/rng.js");
+/* harmony import */ var _stringify_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./stringify.js */ "./node_modules/uuid/dist/stringify.js");
+
+
+
+function _v4(options, buf, offset) {
+    options = options || {};
+    const rnds = options.random ?? options.rng?.() ?? (0,_rng_js__WEBPACK_IMPORTED_MODULE_1__["default"])();
+    if (rnds.length < 16) {
+        throw new Error('Random bytes length must be >= 16');
+    }
+    rnds[6] = (rnds[6] & 0x0f) | 0x40;
+    rnds[8] = (rnds[8] & 0x3f) | 0x80;
+    if (buf) {
+        offset = offset || 0;
+        if (offset < 0 || offset + 16 > buf.length) {
+            throw new RangeError(`UUID byte range ${offset}:${offset + 15} is out of buffer bounds`);
+        }
+        for (let i = 0; i < 16; ++i) {
+            buf[offset + i] = rnds[i];
+        }
+        return buf;
+    }
+    return (0,_stringify_js__WEBPACK_IMPORTED_MODULE_2__.unsafeStringify)(rnds);
+}
+function v4(options, buf, offset) {
+    if (_native_js__WEBPACK_IMPORTED_MODULE_0__["default"].randomUUID && !buf && !options) {
+        return _native_js__WEBPACK_IMPORTED_MODULE_0__["default"].randomUUID();
+    }
+    return _v4(options, buf, offset);
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (v4);
+
+
+/***/ },
+
+/***/ "./node_modules/uuid/dist/validate.js"
+/*!********************************************!*\
+  !*** ./node_modules/uuid/dist/validate.js ***!
+  \********************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _regex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./regex.js */ "./node_modules/uuid/dist/regex.js");
+
+function validate(uuid) {
+    return typeof uuid === 'string' && _regex_js__WEBPACK_IMPORTED_MODULE_0__["default"].test(uuid);
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (validate);
+
+
+/***/ },
+
+/***/ "./src/Ls.js"
+/*!*******************!*\
+  !*** ./src/Ls.js ***!
+  \*******************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! uuid */ "./node_modules/uuid/dist/v4.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
+function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
+function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+
+var Ls = /*#__PURE__*/_createClass(function Ls(key) {
+  var _this = this;
+  _classCallCheck(this, Ls);
+  _defineProperty(this, "readLocalStorage", function (_) {
+    var data = localStorage.getItem(_this.key);
+    if (null === data) {
+      _this.list = [];
+    } else {
+      _this.list = JSON.parse(data);
+    }
+  });
+  _defineProperty(this, "writeLocalStorage", function (_) {
+    var data = JSON.stringify(_this.list);
+    localStorage.setItem(_this.key, data);
+  });
+  _defineProperty(this, "Store", function (data) {
+    var id = (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])();
+    var dataToStore = _objectSpread(_objectSpread({}, data), {}, {
+      id: id
+    });
+    _this.list.push(dataToStore);
+    _this.writeLocalStorage();
+  });
+  _defineProperty(this, "Destroy", function (id) {
+    _this.list = _this.list.filter(function (item) {
+      return item.id != id;
+    });
+    _this.writeLocalStorage();
+  });
+  _defineProperty(this, "Update", function (id, data) {
+    _this.list = _this.list.map(function (item) {
+      return item.id == id ? _objectSpread(_objectSpread(_objectSpread({}, item), data), {}, {
+        id: id
+      }) : item;
+    });
+    _this.writeLocalStorage();
+  });
+  this.key = key; // prisimename key
+  this.readLocalStorage(); // paleidziame metoda readLocalStorage
+});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Ls); //iseksportuojame
+
+/***/ },
 
 /***/ "./src/app.js"
 /*!********************!*\
   !*** ./src/app.js ***!
   \********************/
-() {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
-function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
-function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
-function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
-function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
-function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
-var rand = function rand(min, max) {
-  var minCeiled = Math.ceil(min);
-  var maxFloored = Math.floor(max);
-  return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
-};
-
-// 1. per cd nugeliaujame i projekto folderi
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Ls__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Ls */ "./src/Ls.js");
+// 1. per cd nukeliaujame i projekto folderi
 // 2. npm init -y inicijuoja node
 // 3. apsirasome kanors pakeiciame atsiradusiame package.json
 // 4. pradedame irasineti bibliotekas kaip npm i uuid ar npm install laravel-mix --save-dev
+// 5. sukuriame weboack mix js  sukuriame const kuris paima laravel ir poto nurodome mix js failus app js ir scss
+// 6. npx mix x2 jis sugeneruoje public folderyje failus
+// 7. npx mix watch  - automatiskai pasileidzia save ir sumixuoje pateikdamas su pakitimais i public Ctrl ^ C nutraukti
+// 8. package json "scripts" skiltyje  "start npx mix watch", package json galimai reitu istrinti arba pakeisti type i module
 
-/* 
-
-Ganykla. Turim trijų rūšių gyvulius: avis, antis ir antilopes. 
-Kiekvienas gyvulys turi savo svorį.
-Parašyti localStorage CRUD aplikaciją, 
-kurioje būtų galima pridėti naujus gyvulius su jų svoriais į ganyklą,
- ištrinti iš ganyklos 
- ir redaguoti kiekvieno jų svorį.
- */
-
-/*   
-1. inicijuoja funkcija kuri pirma paziuri ar yra listas, jei yra rendina
-2. toje pacioje funcijoje yra migtukas kuris laukia kad nurodytu pasirinkta spalva
-3. pasirinkta spalva siunciama i Store funkcija kad papilnai butu aprasomas value objektas
-4. store funkcijja ideda objekta i sarasa ir kreipiasi i Write funkcija
-5. write funkcija pavercia sarasa stringu, ir prideda prie key jo value data
-6.  store kreipiasi i render funkcija, joje selectinama kur bus talpinama, po to  pasirenkama template pagal kuria klonuojama struktuka kiekvienam forEach ciklui
+// 9. galime pradeti importuoti bibliotekas kaip uuid, bei atlikti objektini programavima iportuojant exportuojant
 
 
-*/
-
-var LIST;
-var KEY = 'gyvuliai';
+console.log('CRUD');
+var LS; // siam kintamajam priskirsime importuota klase  is Ls js
 var pasirinktas;
-var animalInput = document.querySelector('[data-animal-input]');
-var weightInput = document.querySelector('[data-weight-button]');
-animalInput.addEventListener('change', function (_) {
-  return pasirinktas = animalInput.value;
-});
 var init = function init(_) {
-  readLocalStorage();
-  render();
-  // const animalInput = document.querySelector('[data-animal-input]');
+  LS = new _Ls__WEBPACK_IMPORTED_MODULE_0__["default"]('gyvuliai'); // naujai klasei priskiriamas KEY name
+  _render(LS.list);
+  var animalInput = document.querySelector('[data-animal-input]');
+  var weightInput = document.querySelector('[data-weight-button]');
   var animalAddButton = document.querySelector('[data-add-animal-button]');
-  // const weightInput = document.querySelector('[data-weight-button]');
-
+  animalInput.addEventListener('change', function (_) {
+    pasirinktas = animalInput.value;
+    return pasirinktas;
+  });
   animalAddButton.addEventListener('click', function (_) {
-    var animal = animalInput.value;
-    var svorisAnimal = weightInput.value;
-    Store(animal, svorisAnimal);
+    var gyvunas = animalInput.value;
+    var svoris = weightInput.value;
+    console.log(pasirinktas);
+    if ('' != pasirinktas && weightInput.value > 0) {
+      var dataToStore = {
+        gyvunas: gyvunas,
+        svoris: svoris
+      };
+      LS.Store(dataToStore);
+      _render(LS.list);
+    }
   });
 };
-var readLocalStorage = function readLocalStorage(_) {
-  var data = localStorage.getItem(KEY);
-  if (null === data) {
-    LIST = [];
-  } else {
-    LIST = JSON.parse(data);
-  }
-};
-var writeLocalStorage = function writeLocalStorage(_) {
-  var data = JSON.stringify(LIST);
-  localStorage.setItem(KEY, data);
-};
-var render = function render(_) {
+var _render = function render(list) {
   var listBin = document.querySelector('[data-colors-list]');
   var listRowTemplate = document.querySelector('[data-list-template]');
   listBin.innerHTML = '';
-  LIST.forEach(function (animal) {
+  list.forEach(function (animal) {
     //create
     var rowHtml = listRowTemplate.content.cloneNode(true);
     var animalId = rowHtml.querySelector('[data-animal-id]');
@@ -92,8 +302,9 @@ var render = function render(_) {
     var deleteButton = rowHtml.querySelector('[data-delete-animal]');
     deleteButton.dataset.id = animal.id;
     deleteButton.addEventListener('click', function (e) {
-      var id = parseInt(e.target.dataset.id);
-      Destroy(id);
+      var id = e.target.dataset.id;
+      LS.Destroy(id);
+      _render(LS.list);
     });
 
     //edit
@@ -101,104 +312,19 @@ var render = function render(_) {
     var editButton = rowHtml.querySelector('[data-edit-weight-button]');
     editInput.value = animal.svoris; // senu duomenu perrrasymas i edit forma
     editButton.dataset.id = animal.id;
-    editButton.addEventListener('click', function (x) {
-      var id = parseInt(x.target.dataset.id);
-      var kg = editInput.value;
-      Update(id, kg);
+    editButton.addEventListener('click', function (e) {
+      var id = e.target.dataset.id;
+      var svoris = editInput.value;
+      var dataToStore = {
+        svoris: svoris
+      };
+      LS.Update(id, dataToStore);
+      _render(LS.list);
     });
     listBin.appendChild(rowHtml);
   });
 };
-var Store = function Store(data, meta) {
-  if ('' != pasirinktas && weightInput.value > 0) {
-    var id = rand(10000000, 99999999);
-    dataToStore = {
-      id: id,
-      gyvunas: data,
-      svoris: meta
-    };
-    LIST.push(dataToStore);
-    writeLocalStorage();
-    render();
-  }
-};
-var Update = function Update(id, data) {
-  LIST = LIST.map(function (item) {
-    return item.id == id ? _objectSpread(_objectSpread({}, item), {}, {
-      svoris: data
-    }) : item;
-  });
-  writeLocalStorage();
-  render();
-};
-var Destroy = function Destroy(id) {
-  LIST = LIST.filter(function (color) {
-    return color.id != id;
-  }); //ismetam is saraso kvadratuka su nurodytu id
-  writeLocalStorage();
-  render();
-};
 init();
-
-/* ==============================================================================================
-==============================================================================================
-==============================================================================================
-==============================================================================================
-============================================================================================== */
-
-// const renderAnimalList = (_) => {
-//     const ol = document.querySelector('#ol');
-//     ol.innerHTML = '';
-//     animalKey.forEach((animal) => {
-//         const li = document.createElement('li');
-//         li.style.width = '40%';
-//         li.style.backgroundColor = 'rgb(255,255,255,0.2)';
-//         li.innerHTML = animal;
-//         li.style.lineHeight = '40px';
-//         li.style.borderBottom = '1px solid white';
-//         ol.append(li);
-//     });
-// };
-
-// let animalKey;
-
-// animalKey = localStorage.getItem('gyvuliai');
-
-// if (null === animalKey) {
-//     animalKey = [];
-// } else {
-//     animalKey = JSON.parse(animalKey);
-//     console.log(animalKey);
-// }
-
-// const animalsList = document.querySelector('select');
-// animalsList.style.backgroundColor = 'lightgray';
-// animalsList.style.color = 'black';
-// animalsList.style.border = '1px solid white';
-
-// const animalsSvoris = document.querySelector('#svoris');
-// animalsSvoris.style.backgroundColor = 'lightgray';
-// animalsSvoris.style.border = '1px solid white ';
-// animalsSvoris.style.width = '60px';
-// animalsSvoris.style.color = 'black';
-
-// const pridetiButton = document.querySelector('#pridetiButton');
-
-// animalsList.addEventListener('change', (_) => {
-//     pasirinktas = animalsList.value;
-// });
-
-// pridetiButton.addEventListener('click', (_) => {
-//     if ('' != pasirinktas && animalsSvoris.value > 0) {
-//         animalKey.push(`${pasirinktas} ${animalsSvoris.value} kg`);
-//         const animalValue = JSON.stringify(animalKey);
-//         localStorage.setItem('gyvuliai', animalValue);
-//     }
-
-//     renderAnimalList();
-// });
-
-// renderAnimalList();
 
 /***/ },
 
@@ -208,7 +334,6 @@ init();
   \************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
@@ -280,6 +405,18 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 				}
 /******/ 			}
 /******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
 /******/ 		};
 /******/ 	})();
 /******/ 	

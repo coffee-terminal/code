@@ -1,20 +1,18 @@
 body {
     margin: 0;
-    padding: 10PX;
+    padding: 10px;
     background-color: rgb(72, 72, 72);
     font-family: monospace;
-    font-size: 20PX;
+    font-size: 20px;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 fieldset {
-
-    padding: 20PX;
+    padding: 20px;
     background-image: url(./farmland.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-
 }
 
 legend {
@@ -26,7 +24,7 @@ legend {
     background-color: transparent;
     cursor: pointer;
 
-    background: #22C1C3;
+    background: #22c1c3;
     background: linear-gradient(167deg, rgba(34, 193, 195, 0.05) 0%, rgba(8, 166, 45, 0.3) 100%);
     border-radius: 5px;
     padding: 3px;
@@ -46,14 +44,13 @@ legend {
     line-height: 40px;
     border-bottom: 1px solid white;
     background-color: rgb(255, 255, 255, 0.2);
-
 }
 
 .other-group {
     min-width: 225px;
     display: flex;
     flex-wrap: nowrap;
-    gap: 5px
+    gap: 5px;
 }
 
 .animal-id {
@@ -63,7 +60,6 @@ legend {
     font-size: 30px;
     column-gap: 20px;
 }
-
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

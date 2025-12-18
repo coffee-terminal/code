@@ -21,5 +21,6 @@
         "resolve-url-loader": "^5.0.0",
         "sass": "^1.97.0",
         "sass-loader": "^12.1.0"
-    }
+    },
+    "type": "commonjs"
 }
