@@ -14,9 +14,9 @@ import Ls from './Ls';
 console.log('CRUD');
 
 let LS; // siam kintamajam priskirsime importuota klase  is Ls js
-let pasirinktas;
 
 const init = (_) => {
+    let pasirinktas = '';
     LS = new Ls('gyvuliai'); // naujai klasei priskiriamas KEY name
     render(LS.list);
     const animalInput = document.querySelector('[data-animal-input]');
@@ -29,9 +29,10 @@ const init = (_) => {
     animalAddButton.addEventListener('click', (_) => {
         const gyvunas = animalInput.value;
         const svoris = weightInput.value;
-        console.log(pasirinktas);
 
         if ('' != pasirinktas && weightInput.value > 0) {
+            console.log(pasirinktas);
+
             const dataToStore = {
                 gyvunas,
                 svoris,
@@ -65,7 +66,7 @@ const render = (list) => {
         //edit
         const editInput = rowHtml.querySelector('[data-edit-weight-input]');
         const editButton = rowHtml.querySelector('[data-edit-weight-button]');
-        editInput.value = animal.svoris; // senu duomenu perrrasymas i edit forma
+        // editInput.value = animal.svoris; // senu duomenu perrrasymas i edit forma
         editButton.dataset.id = animal.id;
 
         editButton.addEventListener('click', (e) => {

@@ -263,8 +263,9 @@ __webpack_require__.r(__webpack_exports__);
 
 console.log('CRUD');
 var LS; // siam kintamajam priskirsime importuota klase  is Ls js
-var pasirinktas;
+
 var init = function init(_) {
+  var pasirinktas = '';
   LS = new _Ls__WEBPACK_IMPORTED_MODULE_0__["default"]('gyvuliai'); // naujai klasei priskiriamas KEY name
   _render(LS.list);
   var animalInput = document.querySelector('[data-animal-input]');
@@ -277,8 +278,8 @@ var init = function init(_) {
   animalAddButton.addEventListener('click', function (_) {
     var gyvunas = animalInput.value;
     var svoris = weightInput.value;
-    console.log(pasirinktas);
     if ('' != pasirinktas && weightInput.value > 0) {
+      console.log(pasirinktas);
       var dataToStore = {
         gyvunas: gyvunas,
         svoris: svoris
@@ -310,7 +311,7 @@ var _render = function render(list) {
     //edit
     var editInput = rowHtml.querySelector('[data-edit-weight-input]');
     var editButton = rowHtml.querySelector('[data-edit-weight-button]');
-    editInput.value = animal.svoris; // senu duomenu perrrasymas i edit forma
+    // editInput.value = animal.svoris; // senu duomenu perrrasymas i edit forma
     editButton.dataset.id = animal.id;
     editButton.addEventListener('click', function (e) {
       var id = e.target.dataset.id;
