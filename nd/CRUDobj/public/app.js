@@ -316,11 +316,13 @@ var _render = function render(list) {
     editButton.addEventListener('click', function (e) {
       var id = e.target.dataset.id;
       var svoris = editInput.value;
-      var dataToStore = {
-        svoris: svoris
-      };
-      LS.Update(id, dataToStore);
-      _render(LS.list);
+      if (svoris > 0 && svoris != '') {
+        var dataToStore = {
+          svoris: svoris
+        };
+        LS.Update(id, dataToStore);
+        _render(LS.list);
+      }
     });
     listBin.appendChild(rowHtml);
   });

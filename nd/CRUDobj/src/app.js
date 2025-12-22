@@ -72,11 +72,13 @@ const render = (list) => {
         editButton.addEventListener('click', (e) => {
             const id = e.target.dataset.id;
             const svoris = editInput.value;
-            const dataToStore = {
-                svoris,
-            };
-            LS.Update(id, dataToStore);
-            render(LS.list);
+            if (svoris > 0 && svoris != '') {
+                const dataToStore = {
+                    svoris,
+                };
+                LS.Update(id, dataToStore);
+                render(LS.list);
+            }
         });
 
         listBin.appendChild(rowHtml);
