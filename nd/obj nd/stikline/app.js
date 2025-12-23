@@ -27,10 +27,13 @@ class Stikline {
         if (kiekis > this.turis) {
             Stikline.kiekis = this.turis;
             this.kiekis = this.turis;
+        } else {
+            Stikline.kiekis = kiekis;
+            this.kiekis = kiekis;
         }
     }
     ispilti() {
-        this.kiekis -= this.turis;
+        this.kiekis -= this.kiekis;
         Stikline.stiklines[this.#eile] =
             Stikline.stiklines[this.#eile - 1] - (Stikline.stiklines[this.#eile - 1] - Stikline.stiklines[this.#eile]);
     }
@@ -44,7 +47,7 @@ const Stikline1 = new Stikline(200);
 const Stikline2 = new Stikline(150);
 const Stikline3 = new Stikline(100);
 
-Stikline1.ipilti(300);
+Stikline1.ipilti(500);
 
 console.log(Stikline1.stiklinejeYra());
 Stikline1.ispilti();
