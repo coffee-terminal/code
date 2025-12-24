@@ -1,14 +1,16 @@
-console.log('Static');
+console.log('STATIC');
 
 class Kisene {
-    static visosKisenes = []; // teoriskai reiktu padaryti privaciu
+    static visosKisenes = []; // teoriškai reikėtų padaryti privačiu
 
-    //nebutinas sitam pvz
+    // nebūtinas šitam pvz
     static rand(min, max) {
         const minCeiled = Math.ceil(min);
         const maxFloored = Math.floor(max);
         return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
     }
+
+    // getteris nes turi "get"
     static get viso() {
         let visoYra = 0;
         this.visosKisenes.forEach((k) => (visoYra += k.yra));
@@ -17,14 +19,16 @@ class Kisene {
 
     constructor() {
         this.yra = 0;
-        this.id = this.constructor.rand(1000000, 9999999); //quasi id
+        this.constructor.visosKisenes.push(this); // idedame VISĄ objektą
 
-        //nebutinas sitam pvz
-        this.constructor.visosKisenes.push(this); // idedame visa objekta
+        // nebūtinas šitam pvz
+        this.id = this.constructor.rand(1000000, 9999999); // quasi id
     }
+
     prideti(kiek) {
         this.yra += kiek;
     }
+
     isimti(kiek) {
         this.yra -= kiek;
     }
@@ -32,13 +36,15 @@ class Kisene {
 
 const k1 = new Kisene();
 const k2 = new Kisene();
-const k3 = new Kisene();
 
 k1.prideti(5);
 k2.prideti(2);
-k3.prideti(1);
 
 k1.isimti(4);
 
+const k3 = new Kisene();
+k3.prideti(1);
+
 console.log(k1, k2, k3);
-console.log(Kisene.viso); // getterio metodas kvieciams be skliausteliu
+
+console.log('viso yra: ', Kisene.viso); // getterio metodas kviečiamas be skliaustelių
