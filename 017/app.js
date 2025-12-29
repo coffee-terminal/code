@@ -117,7 +117,7 @@ let found1 = '';
 
 for (i = 0; i < word.length; i++) {
     if (word[i] == 'r') {
-        found1 += `"r" rasta ${i} vietoje`;
+        found1 += `"r" rasta ${i + 1} vietoje `;
     }
 }
 console.log(found1); //nera ciklo bloke ir nesikartoja

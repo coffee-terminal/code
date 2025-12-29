@@ -119,7 +119,7 @@ for (i = 1; i <= 3; i++) {
     sectionElement.appendChild(h3Element); // sekscijos viduje "materelizuojame" naują h3
 }
 
-console.clear();
+// console.clear();
 
 const colors = [];
 colors.push('Red');

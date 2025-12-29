@@ -26,7 +26,7 @@ for (i = 0; i < word.length; i++) {
     body.appendChild(div); //divas su raide įkeliame į body
 }
 
-console.clear();
+// console.clear();
 
 //ciklas while
 let number1;
@@ -50,7 +50,7 @@ do {
 // > <--> <=
 // > <--> >=
 // || <--> &&
-console.clear();
+// console.clear();
 
 //Mesti moneta pakol iškris 3h
 let times = 0;

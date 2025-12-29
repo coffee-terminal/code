@@ -53,7 +53,7 @@ for (i = 0; i < numbers.length; i++) {
     }
 }
 console.log(findResultIndex);
-console.clear();
+// console.clear();
 
 // 1. Koks meškos numeris - numerį atspausdinti konsolėje
 

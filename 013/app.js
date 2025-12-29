@@ -109,7 +109,7 @@ if (55 > 111) {
     console.log('Šaka 3');
 }
 
-console.clear();
+// console.clear();
 
 ///    || = arba(or)
 ///    && = ir(and)
