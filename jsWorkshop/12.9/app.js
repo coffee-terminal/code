@@ -88,7 +88,7 @@ console.log(diena.slice(8)); //' gera diena'
 
 console.log(diena.slice(-3)); // priima neigiamą skaičių kaip argumentą (ir kerpa nuo galo)
 
-console.log(diena.slice(-diena.length)); //Šiandien gera diena
+console.log(diena.slice(diena.length)); //Šiandien gera diena
 
 function sum(a, b) {
     return a + b;
