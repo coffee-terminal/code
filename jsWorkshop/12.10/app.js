@@ -122,7 +122,7 @@ console.log(Number.isFinite(10 / 0)); // false
 console.log(-10 / 0); // -Infinity
 console.log(Number.isFinite(-10 / 0)); // false
 
-console.log(10 * 'string'); // Infinity
+console.log(10 * 'string'); // NaN
 console.log(Number.isFinite(10 * 'string')); // false
 
 // 15 Praktinių užduočių – Number metodai
