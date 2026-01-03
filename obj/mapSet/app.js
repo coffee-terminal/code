@@ -38,7 +38,7 @@ console.log(map.get(fun1));
 
 map.forEach((verte, raktas) => console.log(raktas, '===>', verte));
 
-console.clear();
+// console.clear();
 //mandrai
 
 const fancyMap = new Map();
@@ -71,7 +71,7 @@ console.log(arrFromMap);
 const sortedMap = new Map(arrFromMap); // ne tuscia, o pagal duomenis is masyvo
 console.log(sortedMap);
 
-console.clear();
+// console.clear();
 
 const set = new Set();
 
@@ -82,11 +82,11 @@ set.add('red'); // set yra unikaliu reiksmiu rinkinys
 
 console.log(set, set.size);
 console.log(set.has('red'), set.delete('red'), set.has('red'));
-console.clear();
+// console.clear();
 
 // for in (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in)
 // for of (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
-
+console.log(arr, arr.length);
 for (let i = 0; i < arr.length; i++) {
     console.log(i, '===>', arr[i]);
 }
