@@ -1,4 +1,5 @@
 {
     "liveServer.settings.port": 5501,
-    "cSpell.words": ["indentifikatoriu"]
+    "cSpell.words": ["indentifikatoriu"],
+    "livePreview.defaultPreviewPath": "/nd/CRUDobj/public/index.html"
 }
