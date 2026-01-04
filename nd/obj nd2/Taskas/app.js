@@ -48,3 +48,13 @@ console.log('Rūšiuotos sumos (nuo didžiausios iki mažiausios):', sums);
 
 // console.log(Taskai.taskai);
 // console.log(sums);
+
+/* 
+Paaiškinimas:
+Taskas klasė: Kiekvienas objektas gauna atsitiktinį skaičių taskas intervale 100–999.
+Taskai klasė: Kiekvienas objektas turi masyvą taskai su 10 Taskas objektų.
+daugTasku: Masyvas su 10 Taskai objektų.
+Rūšiavimas: Naudojama sort funkcija, lyginant sumas (naudojant reduce sumai apskaičiuoti). Rūšiuojama nuo didžiausios sumos iki mažiausios.
+Jei vykdote šį kodą naršyklės konsolėje ar Node.js, pamatysite atsitiktines sumas (pvz., [6500, 6200, ...]), rūšiuotas mažėjimo tvarka. Kiekvienas vykdymas bus skirtingas dėl atsitiktinumo.
+
+*/
