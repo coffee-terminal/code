@@ -18,21 +18,19 @@ A1h2[1].innerText = 'random skaicius';
 
 A1button.addEventListener('click', () => {
     for (let i = 0; i < A1h2.length; i++) {
+        A1h2[0].style.color = 'black';
+        A1h2[1].style.color = 'black';
         let h2Random = rand(1, 6);
         console.log(h2Random);
         A1h2[i].innerText = h2Random;
+        if (i == 1) {
+            if (A1h2[0].innerText == A1h2[1].innerText) {
+                A1h2[0].style.color = 'red';
+                A1h2[1].style.color = 'red';
+            }
+        }
     }
-
-    //     const h2Random1 = rand(1, 6);
-    //     const h2Random2 = rand(1, 6);
-    // console.log('clicked');
-    //     console.log(h2Random1);
-    //     console.log(h2Random2);
-
-    //     A1h2[0].innerText = h2Random1;
-    //     A1h2[1].innerHTML = h2Random2;
 });
-
 //2. Tiesiogiai HTML faile rankiniu būdu sukurkite <h3> tagą ir vieną mygtuką.
 // Susikurkite tuščią masyvą, skaičiams saugoti.
 // Paspaudus mygtuką, sugeneruokite rand() skaičių nuo 1 iki 10.
@@ -50,10 +48,11 @@ A2button.addEventListener('click', () => {
     const h3Random1 = rand(1, 10);
     A2arr.push(h3Random1);
     console.log(A2arr);
+    //su reduce
+    A2h3.innerText = A2arr.reduce((accumulator, value) => accumulator + value, 0);
+    // ArrSuma += h3Random1;
 
-    ArrSuma += h3Random1;
-
-    A2h3.innerText = ArrSuma;
+    // A2h3.innerText = ArrSuma;
 });
 
 //3. Tiesiogiai HTML faile rankiniu būdu sukurkite <ul> tagą.
