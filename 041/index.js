@@ -66,9 +66,6 @@ app.get('/kas/:vardas/kiek/:amzius', (req, res) => {
     // res.send('tekstas') - siunčia tekstą į naršyklę
 });
 
-// Padaryti kalkuliatorių skaičiuotuvą sumai per URL skaičiuoti
-// url pvz: /suma/5/10  => turi parašyti "5 + 10 = 15"
-
 app.get('/suma/:num1/:num2', (req, res) => {
     const num1 = req.params.num1;
     const num2 = req.params.num2;
@@ -110,17 +107,89 @@ app.get('/didesnis2/:skaicius1/:skaicius2', (req, res) => {
 
 // Vartotojo įvestos informacijos validacija (tikrinimas)
 
-if (isNaN(skaicius1) || isNaN(skaicius2)) {
-    // tikriname ar abu parametrai yra skaičiai
-    res.send('Klaida: abu parametrai turi būti skaičiai.');
-    return; // baigiame funkcijos vykdymą
-}
+// if (isNaN(skaicius1) || isNaN(skaicius2)) {
+//     // tikriname ar abu parametrai yra skaičiai
+//     res.send('Klaida: abu parametrai turi būti skaičiai.');
+//     return; // baigiame funkcijos vykdymą
+// }
 
-if (skaicius1 == skaicius2) {
-    res.send('Klaida: skaičiai yra lygūs.');
-    return; // baigiame funkcijos vykdymą
-}
+// if (skaicius1 == skaicius2) {
+//     res.send('Klaida: skaičiai yra lygūs.');
+//     return; // baigiame funkcijos vykdymą
+// }
 // Paleidžia serverį ir parašo terminale, kad viskas yra gerai.
 app.listen(port, () => {
     console.log(`Viskas gerai. Bebras dirba ant ${port} porto`);
+});
+
+//-----------------------------------------------------------------------------
+
+/* 
+
+https://duckduckgo.com/?q=karv%C4%97&t=chromentp&ia=web
+ 
+parametrai yra URL dalis po klaustuko ?
+parametras susideda iš kintamojo vardo ir reikšmės
+vardas rašomas prieš lygybės ženklą =
+reikšmė rašoma po lygybės ženklo =
+jei yra keli parametrai, jie atskiriami & ženklu
+ 
+
+karvė at DuckDuckGo
+DuckDuckGo. Privacy, Simplified.
+ 
+*/
+
+// duomenų perdavimas su query (užklausos) parametrais
+//
+app.get('/spalvotas-dydis', (req, res) => {
+    // paimame query parametrus iš req objekto
+    const spalva = req.query.color;
+    const dydis = req.query.size;
+    const mazis = req.query.small;
+    res.send(`Spalva yra ${spalva}, dydis yra ${dydis}, mazis yra ${mazis}`);
+});
+
+// Padaryti kalkuliatorių skaičiuotuvą sumai per URL skaičiuoti
+// url pvz: /suma/5/10  => turi parašyti "5 + 10 = 15"
+
+app.get('/spalvotas-dydis', (req, res) => {
+    // paimame query parametrus iš req objekto
+    const spalva = req.query.color;
+    const dydis = req.query.size;
+    const mazis = req.query.small;
+    res.send(`Spalva yra ${spalva}, dydis yra ${dydis}, mazis yra ${mazis}`);
+});
+
+app.get('/didesnisQuery/', (req, res) => {
+    const num1 = +req.query.num1;
+    const num2 = +req.query.num2;
+    let didesnis;
+    if (num1 == num2) {
+        didesnis = 'lygus';
+    } else {
+        didesnis = Math.max(num1, num2);
+    }
+
+    res.send('Didesnis skaičius yra ' + didesnis);
+});
+
+app.get('/sumaQuery/', (req, res) => {
+    const num1 = req.query.num1;
+    const num2 = req.query.num2;
+    let sum = Number(num1) + Number(num2);
+    // arba const sum = +num1 + +num2;
+
+    res.send(num1 + ' + ' + num2 + ' = ' + sum);
+});
+
+// Padaryti kalkuliatorių skaičiuotuvą sumai per URL skaičiuoti
+// url pvz: /suma/5/10  => turi parašyti "5 + 10 = 15"
+
+app.get('/sumaQueryandParam/:num1/', (req, res) => {
+    const num1 = req.params.num1;
+    const num2 = req.query.num2;
+    const sum = +num1 + +num2;
+
+    res.send(num1 + ' + ' + num2 + ' = ' + sum);
 });
