@@ -1,7 +1,15 @@
 const express = require('express');
 const fs = require('fs'); // failų sistemos modulis-biblioteka
+const bodyParser = require('body-parser');
 const app = express();
 const port = 80;
+
+// Body parser middleware
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+app.use(bodyParser.json()); // for parsing application/json
+
+// Failai folderyje 'public' bus pasiekiami per naršyklę
+app.use(express.static('public')); // Nurodome, kad statiniai failai bus iš 'public' katalogo
 
 // Dalis Router
 app.get('/', (req, res) => {
@@ -192,4 +200,32 @@ app.get('/sumaQueryandParam/:num1/', (req, res) => {
     const sum = +num1 + +num2;
 
     res.send(num1 + ' + ' + num2 + ' = ' + sum);
+});
+
+app.get('/search', (req, res) => {
+    const query = req.query.q;
+    const another = req.query.another;
+    res.send(`You searched for: ${query}. Another input: ${another}`);
+});
+
+// Padaryti kalkuliatorių skaičiuotuvą sumai per URL skaičiuoti
+// url pvz: /suma/5/10  => turi parašyti "5 + 10 = 15"
+
+app.get('/searchSum', (req, res) => {
+    const query = req.query.q;
+    const another = req.query.another;
+    const sum = +query + +another;
+
+    res.send(query + ' + ' + another + ' = ' + sum);
+});
+
+app.post('/login', (req, res) => {
+    const username = req.body.username;
+    const password = req.body.password;
+    // res.send(`Username: ${username}, Password: ${password}`);
+    res.redirect('/ok');
+});
+
+app.get('/ok', (req, res) => {
+    res.send('Login successful!');
 });
